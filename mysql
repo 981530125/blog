@@ -1,0 +1,337 @@
+-- phpMyAdmin SQL Dump
+-- version phpStudy 2014
+-- http://www.phpmyadmin.net
+--
+-- 主机: localhost
+-- 生成日期: 2017 年 05 月 16 日 10:01
+-- 服务器版本: 5.5.47
+-- PHP 版本: 5.3.29
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- 数据库: `myblog`
+--
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_advertisement`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_advertisement` (
+  `Did` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `Ad` varchar(50) NOT NULL COMMENT '广告文字',
+  `Link` varchar(100) NOT NULL COMMENT '广告链接',
+  PRIMARY KEY (`Did`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `tb_advertisement`
+--
+
+INSERT INTO `tb_advertisement` (`Did`, `Ad`, `Link`) VALUES
+(1, '【攒课】我的学习我做主', '8'),
+(2, 'IBM Bluemix名师大讲堂火热报名ing（北京）', '4'),
+(3, '源码精选+知识库', '6');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_article`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_article` (
+  `Aid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '博客编号',
+  `Title` varchar(50) NOT NULL COMMENT '博客标题',
+  `Summery` varchar(100) NOT NULL COMMENT '文章摘要',
+  `Content` varchar(10000) NOT NULL COMMENT '博客内容',
+  `SdTime` datetime NOT NULL COMMENT '发布时间',
+  `ViewNum` int(11) unsigned NOT NULL DEFAULT '50' COMMENT '浏览次数',
+  `CommentNum` int(11) unsigned NOT NULL DEFAULT '0' COMMENT '评论次数',
+  `recom` int(1) unsigned NOT NULL DEFAULT '0' COMMENT '推荐',
+  `Fid` int(3) unsigned NOT NULL DEFAULT '1' COMMENT '文章类别',
+  `Cid` int(10) unsigned NOT NULL COMMENT '文章分类编号',
+  `Uid` int(10) unsigned NOT NULL COMMENT '用户编号',
+  PRIMARY KEY (`Aid`),
+  KEY `Cid` (`Cid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='文章表' AUTO_INCREMENT=18 ;
+
+--
+-- 转存表中的数据 `tb_article`
+--
+
+INSERT INTO `tb_article` (`Aid`, `Title`, `Summery`, `Content`, `SdTime`, `ViewNum`, `CommentNum`, `recom`, `Fid`, `Cid`, `Uid`) VALUES
+(1, '创建对象的方式（1）', '创建对象的方式（1）\n\n方式一、对象字面量的方式', '创建对象的方式（1）\n\n方式一、对象字面量的方式\n\nvar student = {\n\n      name : ''lisi'',\n\n      age : 18,\n\n      call : function(){\n\n           console.log("我叫"+this.name);\n\n      }\n\n}\n\n上面就创建了一个student对象,但是上面这种方式只适用于创建单个对象。其实很多js插件的开发都用到这种方式对象字面量+原型模式\n\n方式二、工厂模式\n\nfunctionstudent(name,age){\n\n      var obj = new Object(); //一个空对象\n\n      obj.name = name;  //声明一个name属性\n\n      obj.age = age;\n\n      obj.say = function(){ //声明一个方法\n\n           console.log("我叫"+obj.name);\n\n      }\n\n      return obj;\n\n}\n\n var student1 = student(''lisi'',20);\n\n      student1.say();\n\n      console.log(student1 instanceof student);//false\n\n其实这个很好理解，就是把创建对象的过程及结果放到函数里面包装起来。但是用这种方式创建的对象无法被识别类型。就像上面返回false一样，无法判断student1是否是student类型。再拿一个熟悉的例子说：\n\nvar arr = newArray();\n\nconsole.log(arrinstanceof Array); //true\n\n \n\n方式三、构造函数模式\n\nfunctionStudent(name,age){\n\n      this.name = name;\n\n      this.age = age;\n\n      this.say = function(){\n\n           console.log("我叫"+this.name);\n\n      }\n\n}\n\nvar student1 = newStudent(''lisi'',20);\n\n      student1.say();\n\n      console.log(student1 instanceof student);//true\n\n首先函数名称的首字母要大写，主要是为了区别于普通函数。创建对象是在函数外面。这种方式创建的对象类型是能够被识别的。当然上面的构造函数你也可以当作普通函数调用(题外话)\n\n这种方式就没有缺点了吗？答案是否定的。请看下面的例子：\n\nfunction a(){\n\n      console.log(1);\n\n}\n\nvar b = a;\n\nvar c = a;\n\nconsole.log(b===c);//true\n\n我们都知道函数被创建之后，就被分别到内存中。变量b,c只是引用函数的指针，实际上他们调用的函数是一样的。而\n\nvar student1 = newStudent(''lisi'',20);\n\nvar student2 = new Student(''san'',18);\n\nvar b = student1.say;\n\nvar c = student2.say;\n\nconsole.log(b===c);//false\n\n有此可知，student1和student2调用的say并不是同一个函数\n\n实际上在调用构造函数时这个方法被重新声明了，显然浪费资源\n\nsay :function(){}  等价于 new Function()\n\n所以为了不浪费资源，我们又可以这样\n\nfunctionStudent(name,age){\n\n      this.name = name;\n\n      this.age = age;\n\n      this.say = say;\n\n}\n\nfunction say(){\n\n      console.log("我叫"+this.name);\n\n}\n\nvar student1 = newStudent(''lisi'',20);\n\nvar student2 = newStudent(''san'',18);\n\nvar b = student1.say;\n\nvar c = student2.say;\n\nconsole.log(b===c);//这时返回的是true\n\n \n\n但是这里又有一个问题了，say这个函数是window下全局的函数，并没有制定是哪个对象的，显然会造成一定混乱。因此为了解决这种缺点，js又提供了一种方式原型模式（其实就是对上面几种模式的一种扩充）', '2017-02-26 13:06:21', 59, 8, 0, 1, 1, 1),
+(2, '1212', '12131313131', '<p>2313123<br/></p>', '2017-02-26 13:06:52', 45, 4, 1, 1, 1, 1),
+(3, '1212', '344头发都是大法师法师', '<p>2313123<br/></p>', '2017-02-26 13:06:57', 48, 0, 0, 1, 1, 1),
+(4, 'html', '文章摘要', '<p>这是我的html</p><p>你<span style="background-color: rgb(255, 0, 0); color: rgb(75, 172, 198);"><strong>看看我对不对</strong></span><br/></p>', '2017-02-26 13:19:18', 50, 0, 1, 2, 5, 1),
+(5, '创建对象的方式', '创建对象', '<p><strong><span style="font-size:24px">创建对象的方式（1）</span></strong></p><p><strong>方式一、对象字面量的方式</strong></p><p>var student = {</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; name : &#39;lisi&#39;,</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; age&nbsp;: 18,</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; call : function(){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(&quot;我叫&quot;+this.name);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p><p>}</p><p>上面就创建了一个student对象,但是上面这种方式只适用于创建单个对象。其实很多js插件的开发都用到这种方式对象字面量+原型模式</p><p><strong>方式二、工厂模式</strong></p><p>functionstudent(name,age){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; var obj = new Object(); //一个空对象</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj.name = name;&nbsp; //声明一个name属性</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj.age = age;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; obj.say = function(){ //声明一个方法</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(&quot;我叫&quot;+obj.name);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; return obj;</p><p>}</p><p>&nbsp;var student1 = student(&#39;lisi&#39;,20);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; student1.say();</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(student1 instanceof student);//false</p><p>其实这个很好理解，就是把创建对象的过程及结果放到函数里面包装起来。但是用这种方式创建的对象无法被识别类型。就像上面返回false一样，无法判断student1是否是student类型。再拿一个熟悉的例子说：</p><p>var arr = newArray();</p><p>console.log(arrinstanceof Array); //true</p><p>&nbsp;</p><p><strong>方式三、构造函数模式</strong></p><p>functionStudent(name,age){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.name = name;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.age = age;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.say = function(){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(&quot;我叫&quot;+this.name);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; }</p><p>}</p><p>var student1 = newStudent(&#39;lisi&#39;,20);</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; student1.say();</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(student1 instanceof student);//true</p><p>首先函数名称的首字母要大写，主要是为了区别于普通函数。创建对象是在函数外面。这种方式创建的对象类型是能够被识别的。当然上面的构造函数你也可以当作普通函数调用(题外话)</p><p>这种方式就没有缺点了吗？答案是否定的。请看下面的例子：</p><p>function a(){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(1);</p><p>}</p><p>var b = a;</p><p>var c = a;</p><p>console.log(b===c);//true</p><p>我们都知道函数被创建之后，就被分别到内存中。变量b,c只是引用函数的指针，实际上他们调用的函数是一样的。而</p><p>var student1 = newStudent(&#39;lisi&#39;,20);</p><p>var student2 = new Student(&#39;san&#39;,18);</p><p>var b = student1.say;</p><p>var c = student2.say;</p><p>console.log(b===c);//false</p><p>有此可知，student1和student2调用的say并不是同一个函数</p><p>实际上在调用构造函数时这个方法被重新声明了，显然浪费资源</p><p>say :function(){}&nbsp; 等价于 new Function()</p><p>所以为了不浪费资源，我们又可以这样</p><p>functionStudent(name,age){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.name = name;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.age = age;</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; this.say = say;</p><p>}</p><p>function say(){</p><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; console.log(&quot;我叫&quot;+this.name);</p><p>}</p><p>var student1 = newStudent(&#39;lisi&#39;,20);</p><p>var student2 = newStudent(&#39;san&#39;,18);</p><p>var b = student1.say;</p><p>var c = student2.say;</p><p>console.log(b===c);//这时返回的是true</p><p>&nbsp;</p><p>但是这里又有一个问题了，say这个函数是window下全局的函数，并没有制定是哪个对象的，显然会造成一定混乱。因此为了解决这种缺点，js又提供了一种方式原型模式（其实就是对上面几种模式的一种扩充）</p><p><br/></p>', '2017-02-26 16:27:25', 50, 2, 1, 1, 2, 1),
+(6, ' 图像处理之水彩画特效生成算法 ', '特效生成算法', '<p>&nbsp;&nbsp; <span style="font-family:Microsoft YaHei; font-size:15px">在研究非真实感绘制相关算法时，水彩画算法是第一个开始看的，不过却拖到最后总结。水彩画还是挺不好模拟的，里面涉及的算法比较多，本文实现的水彩画算法主要参考下面两篇文章，《Interactive\r\n watercolor rendering&nbsp;with temporal coherence and abstraction》 、《Towards\r\n Photo Watercolorization&nbsp;with\r\n Artistic Verisimilitude》 \r\n，第一篇文章比较早，第二篇文章比较新，通过这两篇文章，可以对水彩画的模拟过程有一个大概了解。不过由于涉及的环节比较多，在实现过程中，有些地方做了简化，又新增了一些计算环节，总体上得到效果和文章比，并不是严格一致，不过本文实现的水彩画算法运行较慢，还是比较耗时的。</span></p><p><span style="font-family:Microsoft YaHei; font-size:15px">&nbsp; &nbsp; &nbsp; \r\n&nbsp;水彩画算法主要涉及的计算环节有：（1）简化细节；（2）边缘抖动；（3）边缘加深；（4）颜料分散；（5）紊流效果；（6）叠加纸张纹理等。上述环节中，简化细节是非常耗时的，主要是采用了meanshift及各向异性的Kuwahara滤波原因，或许有更好的替代方法，有待优化。本文很多地方使用了噪声，主要用到了高斯噪声及柏林噪声，主要用于模拟边缘抖动、颜料分散及紊流效果。</span><span style="font-family:&#39;Microsoft YaHei&#39;; font-size:15px">边缘抖动有点类似前文<a target="_blank" href="http://blog.csdn.net/grafx/article/details/54604251">水面倒影算法</a>中的置换滤镜，主要模拟颜料的流动效果。边缘加深主要模拟颜料停止流动后，在边缘处的沉淀痕迹。颜料分散及紊流效果，主要是模拟水彩颜料渗透效果。不过本文实现的算法，颜料分散做的不是很满意，离真实水彩画那种颜料扩散及渗透效果还有很大差距。</span></p><p><span style="font-family:&#39;Microsoft YaHei&#39;; font-size:15px">&nbsp; &nbsp; &nbsp; &nbsp;下面是部分示例代码：</span></p><pre class="brush:html;toolbar:false">void*&nbsp;WaterColorThread(void&nbsp;*arg)&nbsp;&nbsp;\r\n{&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;WaterColorInfo&nbsp;*watercolor_info&nbsp;=&nbsp;(WaterColorInfo&nbsp;*)arg;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;BMPINFO&nbsp;*pSrcBitmap&nbsp;=&nbsp;watercolor_info-&gt;pSrcBitmap;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;BMPINFO&nbsp;*pPaperBitmap&nbsp;=&nbsp;watercolor_info-&gt;pPaperBitmap;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*noise_perlin&nbsp;=&nbsp;watercolor_info-&gt;noise_perlin;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*mean&nbsp;=&nbsp;watercolor_info-&gt;mean;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*stdev&nbsp;=&nbsp;watercolor_info-&gt;stdev;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;color_index&nbsp;=&nbsp;watercolor_info-&gt;color_index;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;thread_id&nbsp;=&nbsp;watercolor_info-&gt;thread_id;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;block_count&nbsp;=&nbsp;watercolor_info-&gt;block_count;&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;数据转换&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;width&nbsp;=&nbsp;pSrcBitmap-&gt;lWidth;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;height=&nbsp;&nbsp;pSrcBitmap-&gt;lHeight;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;int&nbsp;size&nbsp;=&nbsp;width*height;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*rdata&nbsp;=&nbsp;(float&nbsp;*)malloc(size&nbsp;*&nbsp;sizeof(float));&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*gdata&nbsp;=&nbsp;(float&nbsp;*)malloc(size&nbsp;*&nbsp;sizeof(float));&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;float&nbsp;*bdata&nbsp;=&nbsp;(float&nbsp;*)malloc(size&nbsp;*&nbsp;sizeof(float));&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;ConvertToFloat(pSrcBitmap,&nbsp;rdata,&nbsp;gdata,&nbsp;bdata);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;简化细节&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;Abstraction(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;mean,&nbsp;stdev,&nbsp;width,&nbsp;height,&nbsp;color_index,&nbsp;thread_id);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;边缘抖动&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;EdgeWobbling(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;noise_perlin,&nbsp;width,&nbsp;height,&nbsp;block_count);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;边缘加深&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;EdgeDarkening(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;1.5f,&nbsp;width,&nbsp;height);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;颜料分散&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;PigmentDispersion(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;0.5f,&nbsp;width,&nbsp;height);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;紊流效果&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;TurbulenceFlow(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;noise_perlin,&nbsp;2.0f,&nbsp;width,&nbsp;height);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;纸张纹理&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;PaperTexture(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;pPaperBitmap,&nbsp;0.225f,&nbsp;width,&nbsp;height);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;数据转换&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;ConvertToUchar(rdata,&nbsp;gdata,&nbsp;bdata,&nbsp;pSrcBitmap);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;效果微调&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;ImageAdjust(pSrcBitmap);&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;free(rdata);&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;free(gdata);&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;free(bdata);&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;rdata&nbsp;=&nbsp;NULL;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;gdata&nbsp;=&nbsp;NULL;&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;bdata&nbsp;=&nbsp;NULL;&nbsp;&nbsp;\r\n&nbsp;&nbsp;\r\n&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;NULL;&nbsp;&nbsp;\r\n}</pre><p><br/></p>', '2017-03-02 10:14:07', 52, 0, 1, 1, 1, 5),
+(7, '微服务（Microservice）那点事 ', '   代码的实现是简单的，背后的思绪是复杂的。', '<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 代码的实现是简单的，背后的思绪是复杂的。</p><p>&nbsp; &nbsp; &nbsp;&nbsp; 如果单纯的将《彻底实现Linux \r\nTCP的Pacing发送逻辑-普通timer版》中的timer_list换成hrtimer，必然招致失败。因为在hrtimer的function中，调用诸如tcp_write_xmit这样的长路径函数是一种用丝袜装榴莲的行为。好吧，在无奈中我只能参考TSQ的做法。旧恨心魔！\r\n在Linux的TCP实现中，TSQ保证了一个单独的流不会过多地占据发送缓存，从而保证的多个数据流的相对公平。这个机制是用tasklet实现的，那么我觉得TCP的pacing也能通过tasklet来实现。\r\n-------------------------------------\r\nTCP毁了整个网络世界的和谐！Why？\r\n &nbsp; &nbsp; &nbsp; &nbsp;\r\n是谁说TCP发送端一定要维护一个拥塞窗口了？这人树立了权威！然而“拥塞窗口”这个概念只说明了事情的一个方面而对另一个方面只字未提！我说过，拥塞窗口是一个标量而不是一个矢量，这样说的含义在于，它仅仅是在一个维度上度量的一个数值而已，表示“目前可以发送的数据量”，仅此而已。拥塞窗口根本不懂网络上发生了什么。不过可以肯定的是，接收端观察到的数据到达行为是真实的，即两个数据包到达之间是有间隔的！如果你分别在发送端和接收端抓包并分析，将会很容易看到这个事实。\r\n &nbsp; &nbsp; &nbsp; &nbsp;\r\n我们再看发送端，以Linux为例，其发送行为是tcp_write_xmit主持的，它会一次性发送所有可供发送的数据包，每个数据包之间的延迟仅仅是数据包走一趟协议栈的主机延迟，这种延迟对于长肥网络延迟是可以忽略不计的！请我们不要被千兆/万兆以太网以及DC内部的假象所蒙蔽，我们在互联网上访问的内容大多数来自“千里之外”，中间的路途崎岖坎坷，不要相信什么CDN，全都扯淡，商业宣传的噱头，没个鸟用。回到正文，既然发送端是一次性突发发送的数据包，而接收端是间歇性接收到数据包，中间一定发生了什么！是的，这就是根本，但是我们不用关心这个，只要好好跪舔TCP就好了。我们注意一种类似的现象，那就是结婚的婚车，接新娘出发的时候，几十辆德系BBA(奔驰，宝马，奥迪)由一辆“超级豪车”(比如改装的宾利)领衔，一字排开列队，集体统一出发，可是在快到达新娘子家的时候，头车必须停下来等待后车，以营造一种一路上队形持续保持并且今天太阳为你升起的假象，这就是流量整形的作用，首先，车队经由的道路是一个统计复用的系统，并没有卖给哪个个人，加上路上红绿灯，插队，交通拥堵等因素，车队会被打散，本来前后车仅仅相隔几米，最终这个距离会拉开到以公里计算，快要到达目的地的时候，为了以出发时的阵容到达的延迟仅仅是数据包走一趟协议栈的主机延迟，这种延迟对于长肥网络延迟是可以忽略不计的！请我们不要被千兆/万兆以太网以及DC内部的假象所蒙蔽，我们在互联网上访问的内容大多数来自“千里之外”，中间的路途崎岖坎坷，不要相信什么CDN，全都扯淡，商业宣传的噱头，没个鸟用。回到正文，既然发送端是一次性突发发送的数据包，而接收端是间歇性接收到数据包，中间一定发生了什么！是的，这就是根本，但是我们不用关心这个，只要好好跪舔TCP就好了。我们注意一种类似的现象，那就是结婚的婚车，接新娘出发的时候，几十辆德系BBA(奔驰，宝马，奥迪)由一辆“超级豪车”(比如改装的宾利)领衔，一字排开列队，集体统一出发，可是在快到达新娘子家的时候，头车必须停下来等待后车，以营造一种一路上队形持续保持并且今天太阳为你升起的假象，这就是流量整形的作用，首先，车队经由的道路是一个统计复用的系统，并没有卖给哪个个人，加上路上红绿灯，插队，交通拥堵等因素，车队会被打散，本来前后车仅仅相隔几米，最终这个距离会拉开到以公里计算，快要到达目的地的时候，为了以出发时的阵容到达</p>', '2017-03-07 16:26:49', 51, 0, 1, 2, 3, 1),
+(8, 'Android类加载之PathClassLoader和DexClassLoader ', 'Android的Dalvik虚拟机和Java虚拟机的运行原理相同都是将对应的java类加载在内存中运行。而Java虚拟机是加载class文件，也可以将一段二进制流通过defineClass方法生产Cl', '<p><img width="100px" height="200px" src="/ueditor/php/upload/image/20170314/1489499782211802.jpg" title="1489499782211802.jpg" alt="timg.jpg"/></p><pre class="brush:html;toolbar:false">protected&nbsp;Class&lt;?&gt;&nbsp;loadClass(String&nbsp;className,&nbsp;boolean&nbsp;resolve)&nbsp;throws&nbsp;ClassNotFoundException&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Class&lt;?&gt;&nbsp;clazz&nbsp;=&nbsp;findLoadedClass(className);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(clazz&nbsp;==&nbsp;null)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ClassNotFoundException&nbsp;suppressed&nbsp;=&nbsp;null;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//先让父类加载器加载\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clazz&nbsp;=&nbsp;parent.loadClass(className,&nbsp;false);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(ClassNotFoundException&nbsp;e)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;suppressed&nbsp;=&nbsp;e;\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//当所有父类节点的类加载器都没有找到该类时，当前加载器调用findClass方法加载。\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(clazz&nbsp;==&nbsp;null)&nbsp;{&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;try&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;clazz&nbsp;=&nbsp;findClass(className);\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}&nbsp;catch&nbsp;(ClassNotFoundException&nbsp;e)&nbsp;{\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;e.addSuppressed(suppressed);&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;throw&nbsp;e;\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</pre><p><br/></p>', '2017-03-14 21:56:52', 50, 0, 1, 2, 7, 1),
+(9, ' 百度UEditor插入图片尺寸自动适应编辑框大小问题 ', ' 百度UEditor插入图片尺寸自动适应编辑框大小问题 ', '<p><img width="200px" height="200px" src="/ueditor/php/upload/image/20170314/1489501165112829.jpg" title="1489501165112829.jpg" alt="timg.jpg"/></p><p><br/></p><p style="zoom:1; margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px; color:rgb(68,68,68); font-family:微软雅黑,Tahoma,Helvetica,Arial,SimSun,sans-serif; font-size:14px; line-height:25px; orphans:2; widows:2">昨天我使用百度UEditor，上传大图变的好大。不能够自动的缩写和编辑框内大小一样，找了半天代码没发现怎么修改，让它上传缩小，在config中 \n“imageCompressBorder”: 1600, /* 图片压缩 最长边限制 \n*/没什么作用呢。最后还是被我找到了，下面我就来给大家说说如果才能UEditor插入图片尺寸自动适应编辑框大小<br/>首先我们找到如下文件：</p><p style="zoom:1; margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px; color:rgb(68,68,68); font-family:微软雅黑,Tahoma,Helvetica,Arial,SimSun,sans-serif; font-size:14px; line-height:25px; orphans:2; widows:2">\\ueditor\\themes\\iframe.css</p><p style="zoom:1; margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px; color:rgb(68,68,68); font-family:微软雅黑,Tahoma,Helvetica,Arial,SimSun,sans-serif; font-size:14px; line-height:25px; orphans:2; widows:2">从这个文件里，就能看到有这一句：/*可以在这里添加你自己的css*/</p><p style="zoom:1; margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px; color:rgb(68,68,68); font-family:微软雅黑,Tahoma,Helvetica,Arial,SimSun,sans-serif; font-size:14px; line-height:25px; orphans:2; widows:2">哈哈，接下来，我们写css吧：</p><p style="zoom:1; margin-top:0px; margin-bottom:10px; padding-top:0px; padding-bottom:0px; color:rgb(68,68,68); font-family:微软雅黑,Tahoma,Helvetica,Arial,SimSun,sans-serif; font-size:14px; line-height:25px; orphans:2; widows:2">———————————-</p><p>img {<br/>max-width: 100%; /*图片自适应宽度*/<br/>}<br/>body {<br/>overflow-y: scroll !important;<br/>}<br/>.view {<br/>word-break: break-all;<br/>}<br/>.vote_area {<br/>display: block;<br/>}<br/>.vote_iframe {<br/>background-color: transparent;<br/>border: 0 none;<br/>height: 100%;<br/>}</p><p><br/></p>', '2017-03-14 22:19:53', 50, 0, 1, 2, 8, 1),
+(10, 'UEditor编辑器如何让使用图片时自动加上宽度和高度的属性？', 'UEditor编辑器如何让使用图片时自动加上宽度和高度的属性？', '<p>默认上传图片的时候，对应的html代码是这样的<br/>&lt;img&nbsp;src=&quot;/ueditor/php/upload/image/20140722/1406040023503428.jpg&quot;&nbsp;alt=&quot;1406040023503428.jpg&quot;/&gt;<br/><br/>我想让它这样，<br/>&lt;img&nbsp;src=&quot;/ueditor/php/upload/image/20140722/1406040023503428.jpg&quot;&nbsp;alt=&quot;1406040023503428.jpg&quot;&nbsp;width=&quot;291&quot;&nbsp;height=&quot;164&quot;&nbsp;style=&quot;width:&nbsp;291px;&nbsp;height:&nbsp;164px;&quot;/&gt;<br/><br/>就是宽度和高度的属性我想它自动加上，怎么做啊？文档没看到。\n\n\n &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; <br/></p><p><img src="/ueditor/php/upload/image/20170314/1489501845407941.gif" title="1489501845407941.gif" alt="icon.gif"/></p>', '2017-03-14 22:30:52', 51, 0, 1, 2, 2, 1),
+(11, 'UEditor编辑', 'UEditor编辑', '<p><img height="300px" width="200px" src="/ueditor/php/upload/image/20170314/1489502348600680.png" title="1489502348600680.png" alt="bg_main.png"/></p><p>再看看行不行<br/></p>', '2017-03-14 22:39:37', 51, 3, 1, 2, 5, 1),
+(12, '最后一次', '最后一次', '<p><img height="300px" width="600px" src="/ueditor/php/upload/image/20170314/1489503550135377.png" title="1489503550135377.png" alt="bg_main.png"/></p>', '2017-03-14 22:59:24', 51, 0, 0, 2, 4, 1),
+(13, 'thinkphp修改数据表时', 'thinkphp修改数据表时怎么实现字段自加1', '<pre class="brush:html;toolbar:false">$User-&gt;where(&#39;id=5&#39;)-&gt;setInc(&#39;score&#39;,3);&nbsp;//&nbsp;用户的积分加3\r\n$User-&gt;where(&#39;id=5&#39;)-&gt;setInc(&#39;score&#39;);&nbsp;//&nbsp;用户的积分加1\r\n$User-&gt;where(&#39;id=5&#39;)-&gt;setDec(&#39;score&#39;,5);&nbsp;//&nbsp;用户的积分减5\r\n$User-&gt;where(&#39;id=5&#39;)-&gt;setDec(&#39;score&#39;);&nbsp;//&nbsp;用户的积分减1</pre><p><br/></p>', '2017-03-15 14:05:07', 52, 0, 1, 2, 5, 1),
+(14, 'Django 配置 Mysql ', 'Django 配置 Mysql ', '<p><img src="/ueditor/php/upload/image/20170315/1489559319901515.jpg" title="1489559319901515.jpg" alt="timg.jpg"/></p>', '2017-03-15 14:28:45', 57, 0, 1, 2, 4, 1),
+(15, 'mysql数据库', 'mysql数据库和sql server的区别', '<p>mysql 学起来容易，区别就是有一些控制代码名字不同，但功能都一样，没有多大区别，单双sqlsever是微软的，只能应用在window平台，而mysql和linux是最好的搭档，web开发，中小企业都用mysql现在很流行。<br/></p>', '2017-03-19 21:06:09', 55, 0, 0, 1, 6, 1),
+(17, '测试', '测试', '<p>测试测试测试测试测试测试测试测试测试测试测试测试</p>', '2017-05-08 23:17:46', 53, 0, 0, 1, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_articlefamily`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_articlefamily` (
+  `Fid` int(11) unsigned NOT NULL AUTO_INCREMENT COMMENT '博文类别id',
+  `familyname` varchar(20) NOT NULL DEFAULT '转载' COMMENT '类别名称',
+  PRIMARY KEY (`Fid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='博文类别' AUTO_INCREMENT=3 ;
+
+--
+-- 转存表中的数据 `tb_articlefamily`
+--
+
+INSERT INTO `tb_articlefamily` (`Fid`, `familyname`) VALUES
+(1, '原创'),
+(2, '转载');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_articletype`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_articletype` (
+  `Cid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '文章分类编号',
+  `articleType_name` varchar(20) NOT NULL COMMENT '文章类别',
+  `articleType_info` varchar(1000) NOT NULL COMMENT '文章类别信息',
+  PRIMARY KEY (`Cid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='文章类型' AUTO_INCREMENT=9 ;
+
+--
+-- 转存表中的数据 `tb_articletype`
+--
+
+INSERT INTO `tb_articletype` (`Cid`, `articleType_name`, `articleType_info`) VALUES
+(1, '移动开发', '移动开发也称为手机开发，或叫做移动互联网开发。是指以手机、PDA、UMPC等便携终端为基础，进行相应的开发工作，由于这些随身设备基本都采用无线上网的方式，因此，业内也称作为无线开发。'),
+(2, 'Web前端', 'web前端是一个新词汇，刚开始的时候只有美工和程序，后来随着web的发展，对用户交互的需求越来越高，就衍生出了ui（用户交互页面）这除了视觉效果还要有交互体验，就需要js去实现，毕竟一个人的精力是有限的，这么多的工作不可能由一个人去实现，于是出图就成了前端美工，切图出html css就成了前端切图，js就成了前端交互。一般情况下出图和html页面是一个人完成，而js效果由程序员去写，因为毕竟都是程'),
+(3, '架构设计', '架构设计是人们对一个结构内的元素及元素间关系的一种主观映射的产物。架构设计是一系列相关的抽象模式，用于指导大型软件系统各个方面的设计。'),
+(4, '编程语言', '编程语言（programming language），是用来定义计算机程序的形式语言。它是一种被标准化的交流技巧，用来向计算机发出指令。一种计算机语言让程序员能够准确地定义计算机所需要使用的数据，并精确地定义在不同情况下所应当采取的行动。'),
+(5, '互联网', '互联网（英语：Internet），又称网际网络，或音译因特网(Internet)、英特网，互联网始于1969年美国的阿帕网。是网络与网络之间所串连成的庞大网络，这些网络以一组通用的协议相连，形成逻辑上的单一巨大国际网络。通常internet泛指互联网，而Internet则特指因特网。这种将计算机网络互相联接在一起的方法可称作“网络互联”，在这基础上发展出覆盖全世界的全球性互联网络称互联网，即是互相连接一起的网络结构。互联网并不等同万维网，万维网只是一建基于超文本相互链接而成的全球性系统，且是互联网所能提供的服务其中之一。'),
+(6, '数据库', '数据库(Database)是按照数据结构来组织、存储和管理数据的仓库，它产生于距今六十多年前，随着信息技术和市场的发展，特别是二十世纪九十年代以后，数据管理不再仅仅是存储和管理数据，而转变成用户所需要的各种数据管理的方式。数据库有很多种类型，从最简单的存储有各种数据的表格到能够进行海量数据存储的大型数据库系统都在各个方面得到了广泛的应用。\r\n\r\n\r\n'),
+(7, '系统运维', '互联网最近几十年发生了很大变化，从最初的modem拨号接入，经历了ISDN接入、DSL接入、cable modem接入、专线接入、光纤接入、无线接入，以及分组交换网、帧中继网和ATM网，每一次技术变革都代表着更高要求。系统运行有两种常见的模式，即B/S和C/S，服务器端起着关键性作用，系统运维主要集中于服务器端，其中服务器的web引擎和数据库引擎又是至关重要。'),
+(8, '综合', '生活闲谈');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_favoriteblog`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_favoriteblog` (
+  `id` int(11) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `Aid` int(11) NOT NULL COMMENT '关注的博客id',
+  `Uid` int(11) NOT NULL COMMENT '关注人id',
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=6 ;
+
+--
+-- 转存表中的数据 `tb_favoriteblog`
+--
+
+INSERT INTO `tb_favoriteblog` (`id`, `Aid`, `Uid`) VALUES
+(1, 14, 1),
+(2, 11, 1),
+(3, 1, 1),
+(4, 6, 1),
+(5, 13, 1);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_friend`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_friend` (
+  `Sid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '编号',
+  `Userid` int(10) unsigned NOT NULL COMMENT '主人编号',
+  `UserName` varchar(20) NOT NULL COMMENT '主人用户名',
+  `friend_friendid` int(10) unsigned NOT NULL COMMENT '好友编号',
+  `friend_nickname` varchar(50) NOT NULL COMMENT '好友昵称',
+  PRIMARY KEY (`Sid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='好友表' AUTO_INCREMENT=9 ;
+
+--
+-- 转存表中的数据 `tb_friend`
+--
+
+INSERT INTO `tb_friend` (`Sid`, `Userid`, `UserName`, `friend_friendid`, `friend_nickname`) VALUES
+(2, 1, 'admin', 5, '萝卜'),
+(3, 1, 'admin', 2, '981530125'),
+(4, 1, 'admin', 3, '937745232'),
+(5, 1, 'admin', 4, '13958767001'),
+(7, 1, 'admin', 8, '123456');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_images`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_images` (
+  `tid` int(11) NOT NULL AUTO_INCREMENT,
+  `imageslink` varchar(100) NOT NULL COMMENT '图片地址',
+  `blogid` int(11) NOT NULL,
+  PRIMARY KEY (`tid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='图片表' AUTO_INCREMENT=4 ;
+
+--
+-- 转存表中的数据 `tb_images`
+--
+
+INSERT INTO `tb_images` (`tid`, `imageslink`, `blogid`) VALUES
+(1, '/2017-04-05/58e507c43f412.jpg', 1),
+(2, '/2017-04-05/58e50eef60b16.jpg', 7),
+(3, '/2017-04-17/58f4d474b1b8e.png', 0);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_message`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_message` (
+  `Mid` int(20) NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `Nickname` varchar(1000) NOT NULL COMMENT '昵称',
+  `Headimglink` varchar(100) NOT NULL COMMENT '头像链接',
+  `Content` varchar(1000) NOT NULL COMMENT '留言',
+  `Leavetime` datetime NOT NULL COMMENT '时间',
+  PRIMARY KEY (`Mid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='留言表' AUTO_INCREMENT=53 ;
+
+--
+-- 转存表中的数据 `tb_message`
+--
+
+INSERT INTO `tb_message` (`Mid`, `Nickname`, `Headimglink`, `Content`, `Leavetime`) VALUES
+(1, '琳琳', '/2017-03-02/58b7fc7d9cdf6.jpg', '不错！', '2017-04-09 22:01:54'),
+(52, '琳琳', '/2017-03-02/58b7fc7d9cdf6.jpg', '值得学习，谢谢分享', '2017-04-09 22:16:24');
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_review`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_review` (
+  `Rid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT '评论编号',
+  `R_articleid` int(10) unsigned NOT NULL COMMENT '评论的文章编号',
+  `R_userid` int(10) unsigned NOT NULL COMMENT '文章作者的id',
+  `R_authorID` int(10) unsigned NOT NULL COMMENT '评论人id',
+  `R_content` varchar(2000) NOT NULL COMMENT '评论内容',
+  `R_time` datetime NOT NULL COMMENT '评论时间',
+  `R_pid` int(10) unsigned NOT NULL COMMENT '评论级别',
+  PRIMARY KEY (`Rid`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='评论表' AUTO_INCREMENT=18 ;
+
+--
+-- 转存表中的数据 `tb_review`
+--
+
+INSERT INTO `tb_review` (`Rid`, `R_articleid`, `R_userid`, `R_authorID`, `R_content`, `R_time`, `R_pid`) VALUES
+(1, 2, 1, 2, '小程序之三元运算 ', '2017-03-12 13:14:25', 0),
+(2, 1, 1, 2, '赞一个', '2017-03-12 13:28:13', 0),
+(3, 1, 1, 1, '去去去去', '2017-03-13 13:23:46', 0),
+(4, 2, 1, 1, '什么意思', '2017-03-13 13:24:31', 1),
+(5, 2, 1, 1, '不错，有用，O(∩_∩)O谢谢', '2017-03-13 13:28:34', 1),
+(6, 2, 1, 1, '千万千万千万', '2017-03-13 14:50:29', 1),
+(7, 1, 1, 1, '不错', '2017-03-13 16:45:14', 0),
+(9, 1, 1, 1, '去去去去', '2017-03-13 16:57:22', 2),
+(10, 1, 1, 1, '啊啊啊', '2017-03-13 16:58:21', 2),
+(11, 1, 1, 1, '为什么', '2017-03-13 17:03:05', 2),
+(12, 1, 1, 1, '你看看', '2017-03-13 17:32:23', 2),
+(14, 5, 1, 1, '你也好', '2017-03-13 22:35:07', 13),
+(15, 11, 1, 1, '没有用', '2017-03-15 13:20:59', 0),
+(16, 11, 1, 1, '路过', '2017-03-15 13:25:25', 0),
+(17, 11, 1, 1, '我这有用', '2017-03-15 13:26:32', 15);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_session`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_session` (
+  `session_id` varchar(255) NOT NULL,
+  `session_expire` int(11) NOT NULL,
+  `session_data` blob,
+  UNIQUE KEY `session_id` (`session_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+--
+-- 转存表中的数据 `tb_session`
+--
+
+INSERT INTO `tb_session` (`session_id`, `session_expire`, `session_data`) VALUES
+('37gvh0khq012okuuklb24obsl2', 1494747110, 0x41646d696e5f555345527c733a353a2261646d696e223b4c6173744c6f67696e54696d657c733a31393a22313937302d30312d30312030383a33333a3337223b4c61737469707c733a393a223132372e302e302e31223b);
+
+-- --------------------------------------------------------
+
+--
+-- 表的结构 `tb_user`
+--
+
+CREATE TABLE IF NOT EXISTS `tb_user` (
+  `Uid` int(10) unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',
+  `UserName` varchar(20) NOT NULL COMMENT '用户名',
+  `Password` varchar(30) NOT NULL COMMENT '密码',
+  `NickName` varchar(50) NOT NULL COMMENT '昵称',
+  `Articlecount` int(20) unsigned NOT NULL COMMENT '文章数',
+  `Description` varchar(100) DEFAULT NULL COMMENT '描述',
+  `Sex` varchar(4) NOT NULL DEFAULT '男' COMMENT '性别',
+  `age` int(3) unsigned DEFAULT NULL,
+  `Email` varchar(100) DEFAULT NULL,
+  `Headimglink` varchar(50) DEFAULT '/2017-04-04/58e358006a30a.jpg',
+  `address` varchar(30) DEFAULT NULL COMMENT '地址',
+  `occupation` varchar(20) DEFAULT '学生' COMMENT '职业',
+  `Lastip` varchar(20) NOT NULL COMMENT '最后登录ip',
+  `LastLoginTime` datetime NOT NULL COMMENT '最后登录时间',
+  `Status` int(2) NOT NULL DEFAULT '0' COMMENT '激活',
+  PRIMARY KEY (`Uid`),
+  UNIQUE KEY `UserName` (`UserName`),
+  UNIQUE KEY `UserName_2` (`UserName`),
+  UNIQUE KEY `UserName_3` (`UserName`),
+  UNIQUE KEY `NickName` (`NickName`),
+  UNIQUE KEY `NickName_2` (`NickName`),
+  UNIQUE KEY `Email` (`Email`)
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 COMMENT='用户信息表' AUTO_INCREMENT=10 ;
+
+--
+-- 转存表中的数据 `tb_user`
+--
+
+INSERT INTO `tb_user` (`Uid`, `UserName`, `Password`, `NickName`, `Articlecount`, `Description`, `Sex`, `age`, `Email`, `Headimglink`, `address`, `occupation`, `Lastip`, `LastLoginTime`, `Status`) VALUES
+(1, 'admin', 'admin', '琳琳', 16, '', '男', 12, '981530125@qq.com', '/2017-03-02/58b7fc7d9cdf6.jpg', '温州', '学生', '127.0.0.1', '2017-05-14 14:59:57', 1),
+(2, '981530125', 'lxz178178', '981530125', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e36151a139e.jpg', NULL, '学生', '127.0.0.1', '2017-04-04 17:02:51', 0),
+(3, '937745232', 'lxz178178', '937745232', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e361f6af016.jpg', NULL, '学生', '127.0.0.1', '2017-04-04 17:05:41', 0),
+(4, '13958767001', '123456', '13958767001', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e362466c3f6.jpg', NULL, '学生', '127.0.0.1', '2017-04-04 17:06:53', 0),
+(5, 'user', 'user', '萝卜', 1, NULL, '男', NULL, NULL, '/2017-04-04/58e358006a30a.jpg', NULL, '学生', '127.0.0.1', '2017-04-09 18:25:06', 0),
+(6, '18069731771', 'lxz178178', '18069731771', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e358006a30a.jpg', NULL, '学生', '127.0.0.1', '2017-03-17 15:18:50', 0),
+(7, 'root', 'root', 'root', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e362711c087.jpg', NULL, '学生', '127.0.0.1', '2017-04-04 17:07:41', 0),
+(8, '123456', '123456', '123456', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e358006a30a.jpg', NULL, '学生', '127.0.0.1', '2017-03-17 15:24:45', 0),
+(9, '12342', '12345', '12342', 0, NULL, '男', NULL, NULL, '/2017-04-04/58e358006a30a.jpg', NULL, '学生', '127.0.0.1', '2017-05-09 23:47:23', 0);
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
