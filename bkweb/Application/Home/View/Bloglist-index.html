@@ -1,0 +1,72 @@
+<include file='Common:header'/>
+<link rel="stylesheet" href="__PUBLIC__/css/header.css">
+<link rel="stylesheet" href="__PUBLIC__/css/list.css">
+<link rel="stylesheet" href="__PUBLIC__/css/footer.css">
+<script type="text/javascript" src="__PUBLIC__/js/style.js"></script>
+<include file='Common:login'/>
+  <article>
+    <div id="tab-list">
+    <ul id="ull">
+        <li class="active">最新</li><li>关注</li><form method="post" action="#" id="search_form"><input type="text" class="search" placeholder="搜索博客"/></form>
+    </ul>
+    <section>
+     <foreach name="articlelist" item="al">
+     <div class="article-list">
+      <div class="list-title"><a href="{:U('/home/'.$al['Aid'])}" >{$al.Title}</a></div>
+      <div class="list-content">
+      <p> {$al.Summery}</p>
+      </div>
+      <div class="list-read"><span class="list-time">{$al.SdTime}</span><span><a href="#">阅读次数</a>({$al.ViewNum})</span><span><a href="#">评论</a>({$al.CommentNum})</span></div>
+     </div>
+     </foreach>
+    </section>   
+
+    <section class="hide">
+      <foreach name="absorbblog" item="ab">
+        <?php $articleblog=M('article')->where(array('Aid'=>$ab['Aid']))->find();?>
+      <div class="article-list">
+      <div class="list-title"><a href="{:U('/home/'.$ab['Aid'])}"><?php echo $articleblog['Title'];?></a></div>
+      <div class="list-content">
+      <p><?php echo $articleblog['Summery']?></p>
+      </div>
+      <div class="list-read"><span class="list-time"><?php echo $articleblog['SdTime'] ?></span><span><a href="#">阅读次数</a>(<?php echo $articleblog['ViewNum']?>)</span><span><a href="#">评论</a>(<?php echo $articleblog['CommentNum']?>)</span></div>
+     </div>
+       </foreach>
+    </section>    
+</div>
+  <div class="pages"></div>
+  </article>
+<aside> 
+  <dl class="content_dl">
+    <dt><a href="#">
+     <img class="content_userimg" src="__ROOT__/Uploads{$Headimglink}"></a>
+    </dt><div class="hr1"></div>
+     <dd>
+      <a class="content_name" href="#">{$NickName}</a>
+     <div class="content_btn"><a href="{:U('home/blogeditor/addblogs')}"><input class="btn" type="button" value="写博客" onclick="#"></a></div>
+     <div class="down"></div>
+     <div class="sort">
+       <div class="title"><span class="fl">分类</span><em class="numn">共{$count}篇</em></div>
+       <div class="list">
+        <ul>
+          
+            <for start="1" end="8">
+            <?php
+              $user=M('user')->where(array('UserName'=>$_SESSION[UserName]))->find();
+              $sum=D('article')->where(array('Cid'=>$i,'Uid'=>$user['Uid']))->count();
+             $type=M('articletype')->where(array('Cid'=>$i))->find();
+             ?>
+             <a href="#">
+            <span class="name"><?php echo $type['articleType_name'] ?></span><em class="num"><?php
+            echo $sum ?></em>
+            </a>
+            </for>
+
+          </ul></div>
+     </div>
+     </dd>
+  </dl>
+  </aside>
+<include file='Common:footer'/>
+</body>
+</html>

@@ -1,0 +1,76 @@
+   <div class="comment-list">
+     <foreach name="review" item="rv">
+     <div class="comment-leave">
+       <div class="comment-user">
+         <img src="__ROOT__/Uploads{$rv.Headimglink}">
+       </div>
+       <div class="layout-column">
+         <div class="layout-name"><if condition='$rv[R_pid] neq 0'>{$rv.NickName}<span class="ison">{$rv.html}楼上</span>
+      <else/>{$rv.NickName}</if><span id="returnrv">
+
+            <img title="回复" class="returnrv" src="__PUBLIC__/images/mail.png">
+
+        <!--  <a href="{:U('home/blogcontent/returnreview',array('pid'=>$rv[R_pid]))}"><img title="回复" src="__PUBLIC__/images/mail.png"></a> -->
+
+
+         </span></div>
+         <div class="layout-date"><span>{$number++}</span><span>楼 {$rv.R_time}</span></div>
+         <div class="layout-content">{$rv.R_content}</div>
+       </div>
+       <include file="Common:review"/>
+     </div>
+     </foreach>
+
+    <!--  <div class="comment-leave">
+       <div class="comment-user">
+         <img src="__PUBLIC__/images/user.jpg">
+       </div>
+       <div class="layout-column">
+         <div class="layout-name">王宁</div>
+         <div class="layout-date"><span>2</span><span>楼 2017/01/18</span></div>
+         <div class="layout-content">小程序之三元运算 </div>
+       </div>
+     </div>
+
+     <div class="comment-leave">
+       <div class="comment-user">
+         <img src="__PUBLIC__/images/user.jpg">
+       </div>
+       <div class="layout-column">
+         <div class="layout-name">王宁</div>
+         <div class="layout-date">
+           <span>3</span>
+           <span>楼 2017/01/18</span>
+         </div>
+         <div class="layout-content">小程序之三元运小程序之三元运算小程序之三元小程序之三元运算小程序之三元运算小程序之三元运算运算小程序之三元运算小程序之三元运算小程序之三元运算算 </div>
+       </div>
+     </div>
+
+     <div class="comment-leave">
+       <div class="comment-user">
+         <img src="__PUBLIC__/images/user.jpg">
+       </div>
+       <div class="layout-column">
+         <div class="layout-name">王宁</div>
+         <div class="layout-date">
+           <span>4</span>
+           <span>楼 2017/01/18</span>
+         </div>
+         <div class="layout-content">小程序之三元运算 </div>
+       </div>
+     </div>
+
+     <div class="comment-leave">
+       <div class="comment-user">
+         <img src="__PUBLIC__/images/user.jpg">
+       </div>
+       <div class="layout-column">
+         <div class="layout-name">王宁</div>
+         <div class="layout-date">
+             <span>5</span><span>楼 2017/01/18</span>
+         </div>
+            <div class="layout-content">小程序之三元运算 </div>
+       </div>
+     </div> -->
+
+   </div>

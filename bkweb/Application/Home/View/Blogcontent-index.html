@@ -1,0 +1,188 @@
+<include file='Common:header'/>
+<link rel="stylesheet" href="__PUBLIC__/css/header.css">
+<link rel="stylesheet" href="__PUBLIC__/css/article.css">
+<link rel="stylesheet" href="__PUBLIC__/css/footer.css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/review.js"></script>
+<include file='Common:login'/>
+
+
+
+<!-- 主题 -->
+<div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">{$NickName}<span class="logo_colour">的博客</span></a></h1>
+          <h2>一切重新开始</h2>
+        </div>
+      </div>
+     <div id="menubar">
+        <ul id="menu">
+          <li class="selected"><a href="{:U('home/blogeditor/addblogs')}" target="_self">写博客</a></li>
+          <li><if condition='$nid'><a href="###">已关注</a><else/><a href="{:U('home/blogcontent/concern',array('id'=>$aid))}">关注</a></if></li>
+        </ul> 
+      </div>
+<aside>
+<div class="grtitle">个人资料</div>
+ <div class="personinf"><img src="__ROOT__/Uploads{$Headimglink}"><div><span><strong>{$NickName}</strong></span></div> </div>
+ <div class="person-inform">
+    <div class="inform-content">
+    <ul>
+    <li>原创：{$county}篇</li>
+    <li>转载：{$countx}篇</li>
+    <li>文章：{$countz}篇</li>
+    <li>评论：{$reviewnum}条</li> 
+    <li>访问：{$readnum}次</li> 
+    </ul>
+</div>
+ </div>
+ <div class="person-item">
+   文章分类
+   <ul class="inform-item">
+      <for start="1" end="9">
+       <?php
+              $article=D('article')->where(array('Aid'=>$_GET['id']))->relation(true)->find();
+              $sum=D('article')->where(array('Cid'=>$i,'Uid'=>$article['Uid']))->count();
+             $type=M('articletype')->where(array('Cid'=>$i))->find();
+             ?>
+          <li>
+            <span class="name"><?php echo $type['articleType_name'];?></span><em class="num">(<?php
+            echo $sum ?>)</em>
+            </li>
+            </for>
+<!--             <li><a href="#">
+            <span class="name">日常记录</span><em class="num">(10)</em>
+            </a></li>
+            <li><a href="#">
+            <span class="name">转载文章</span><em class="num">(10)</em>
+            </a></li>
+            <li><a href="#">
+            <span class="name">前    端</span><em class="num">(10)</em>
+            </a></li>
+            <li><a href="#">
+            <span class="name">工作日志</span><em class="num">(10)</em>
+            </a></li> -->
+          </ul>
+ </div>
+  <div class="person-rank">
+   阅读排行
+   <ul class="inform-rank">
+      <foreach name="readrank" item="rr">
+          <li><a href="{:U('/home/'.$rr['Aid'])}">
+            <span class="viewrank">{$rr.Title}</span><em class="viewnum">({$rr.ViewNum})</em>
+            </a></li>
+       </foreach>
+          </ul>
+ </div>
+<div class="person-rank">
+   评论排行
+   <ul class="inform-rank">
+       <foreach name="commentrank" item="cr">
+          <li><a href="{:U('/home/'.$cr['Aid'])}">
+            <span class="viewrank">{$cr.Title}</span><em class="viewnum">({$cr.CommentNum})</em>
+            </a></li>
+      </foreach>
+          </ul>
+ </div>
+</aside>
+<article>
+<section>
+   <h2><span class="familycolor">{$familyname}</span><a href="#">{$Title}</a></h2>
+    <div class="list-read"><span class="list-time">{$SdTime}</span><span><a href="#">阅读次数</a>({$ViewNum})</span><span><a href="#">评论</a>({$CommentNum})</span><span><a href="#">{$articleType_name}</a></span></div>
+</section>
+<section>
+<div class="text-content">{$Content}</div>
+<?php M('article')->where(array('Aid'=>$_GET['id']))->setInc('ViewNum'); ?>
+</section>
+   <div class="blogs-related">
+      <h4>相关博客</h4>
+      <div class="panel-body">
+       <foreach name="articleblog" item="ab">
+       <div class="relate-item">
+          <div class="author-info">
+          <a href="{:U('/home/'.$ab['Aid'])}" class="item-title">{$ab.Title}</a>
+            <span class="icon"><img src="__ROOT__/Uploads{$ab.Headimglink}"></span>
+               {$ab.UserName}
+            </div>    
+            <div class="relate-data text-right">
+            <i class="icon-see"><img src="__PUBLIC__/images/see.png">{$ab.ViewNum}</i>
+            <i class="icon-mail"><img src="__PUBLIC__/images/mail.png">{$ab.CommentNum}</i></div>
+       </div>
+          </foreach>
+<!--         <div class="relate-item ">
+          <div class="author-info">
+          <a href="##" class="item-title">常用前端命名规范</a>
+            <span class="icon"><img src="__PUBLIC__/images/user.jpg"></span>
+               Rolle
+            </div>    
+            <div class="relate-data text-right"><i class="icon-see"><img src="__PUBLIC__/images/see.png">1221</i><i class="icon-mail"><img src="__PUBLIC__/images/mail.png">1221</i></div>
+       </div>
+
+        <div class="relate-item ">
+          <div class="author-info">
+          <a href="##" class="item-title">常用html、CSS、javascript命名规范</a>
+            <span class="icon"><img src="__PUBLIC__/images/user.jpg"></span>
+               Rolle
+            </div>    
+            <div class="relate-data text-right"><i class="icon-see"><img src="__PUBLIC__/images/see.png">1221</i><i class="icon-mail"><img src="__PUBLIC__/images/mail.png">1221</i></div>
+       </div> -->
+
+
+      </div>
+      </div>
+   <h4>评论({$count})</h4>
+
+
+<include file='Common:reviewlist'/>
+ <!--   <form action="" method="post" id="form"> -->  
+   <div class="blog-comment" name="blog-comment">
+    <if condition="!isset($_SESSION['UserName'])">
+      <span class="isin">您还没有登录,请[登录]或[注册]!!</span>
+      <else/>
+     <input type="hidden" id="hideid" value="{$aid}">
+     <textarea class="txtarea" id="txtarea" autocomplete="off"></textarea>
+     <span class="hint" id="hint"></span>
+     <input type="hidden" name="R_pid" id="R_pid" value="0">
+     <input type="submit" class="btn" id="btn" value="发布评论">
+     </if>
+   </div> 
+   
+ <!--   </form> -->
+</article>
+<include file='Common:footer'/>
+<!-- <script type="text/javascript">
+//    window.onload=function(){
+//     var form=document.getElementById("form");
+//     var formvalue=form.value;
+//     if("")
+// }
+window.onload=function(){
+  var aid=document.getElementById('hideid');
+  var btn=document.getElementById('btn');
+  var hint=document.getElementById('hint');
+  btn.onclick=function(){
+    var Aid=aid.value;
+   var txtarea=document.getElementById('txtarea').value;
+     if(!txtarea){
+      hint.innerHTML="*内容不能为空";
+     }else{
+     var xhr=new XMLHttpRequest();
+   xhr.open('post','blogcontent/ajaxreview',true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send('Aid='+Aid+'&&txtarea='+txtarea);
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState==4 && xhr.status==200){
+        if(xhr.responseText=="success"){
+          hint.innerHTML="上传成功";
+        }
+        if(xhr.responseText=="error"){
+          hint.innerHTML="上传失败";
+        }
+      }
+    }
+     }
+
+  }
+}
+</script> -->
+</body>
+</html>

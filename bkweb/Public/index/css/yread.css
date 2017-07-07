@@ -1,0 +1,14 @@
+.ytitle{
+	text-align: center;
+	/*margin: 0 auto;*/
+}
+.ycontent{
+	width:90%;
+	margin: 30px auto;
+/*	border: 1px solid #000;*/
+	word-break: break-all;
+	word-wrap: break-word;
+}
+.ycontent p{
+	margin-left: 7px;
+}

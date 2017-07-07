@@ -1,0 +1,52 @@
+article{
+/*	border:1px solid #369;*/
+	width: 70%;
+/*	height:500px;*/
+	margin:50px auto;
+/*	display: block;*/
+}
+.table{
+/*	width:80%;*/
+	margin: 20px auto;
+/*	border:1px solid #000;*/
+}
+.table .title{
+	height:28px;
+	line-height:25px;
+	border: none;
+	background-color: #F8F8F8;
+	border-bottom:1px solid #185CA3; 
+	text-indent: 10px;
+	color: 14px;
+	width: 200px;
+}
+.table select{
+	height:28px;
+	width:100px;
+}
+.table tr{
+	height:40px;
+}
+.table td{
+	text-align:left;
+/*	border: 1px solid #000;*/
+}
+.table .wid{
+	width: 92px;
+}
+.content{
+	display: block;
+}
+.bn{
+	width:80px;
+	height:35px;
+	margin-right:50px; 
+	cursor:pointer;
+	border-radius:8px;
+	color:#fff;
+	font-size:14px;
+	background-color:#185CA3;
+	border: none;
+}
+
+

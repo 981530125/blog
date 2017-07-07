@@ -1,0 +1,6 @@
+.ranking{width: 88%;margin: 0 auto;}
+.ranking_week{background-color: #fff;width: 32%;margin-top: 30px;float: left;margin-left: 15px;overflow: hidden;}
+.ranking_week li{list-style: none;}
+.ranking_week h4{margin: 0 auto;text-align: center;height: 50px;font-weight:bold;line-height: 50px;width:350px;border-bottom: 2px solid #e7ecef;}
+.list_name{margin-left: 20px;height: 80px;line-height: 80px;border-bottom: 1px dashed #e7ecef;}
+.list_name span{float:left;height: 25px;width:20px;padding-left: 5px;margin-top:30px;line-height: 30px;border-radius: 50%;margin-right: 15px;background-color: #DC3C00; }

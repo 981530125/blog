@@ -1,0 +1,21 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="__PUBLIC__/Css/yread.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<head>
+</head>
+<body>
+  <div class="bcg">
+  <foreach name="article" item="v">
+    <h2 class="ytitle">{$v.Title}</h2>
+    
+    <div class="ytitle">
+     <span>【来源：{$v.articleType_name}  作者：{$v.UserName}  时间：{$v.SdTime}  浏览：{$v.ViewNum}】</span>
+    </div>
+    <div class="ycontent">
+    <p>{$v.Content}</p>
+    </div>
+</foreach>
+  </div>
+</body>
+</html>

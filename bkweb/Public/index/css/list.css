@@ -1,0 +1,173 @@
+aside{
+	border-right: 1px dashed #d1d1d1;
+	text-align: center;
+	width: 28%;
+	height: auto;
+	position: absolute;
+	top: 100px;
+	left: 30px;
+	/*border: 1px solid #000;*/
+	
+}
+.content_userimg{
+	border-radius: 50%;
+	width: 100px;
+	height: 100px;
+	
+}
+.title{
+	margin: 0 auto;
+	width: 270px;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #e1e1e1;
+}
+
+.btn{
+	width: 100px;
+	height: 35px;
+	color: #fff;
+	border-radius:5px;
+	background-color: #3385ff;
+	border: none;
+	cursor:pointer;
+}
+.content_name{
+	display: block;
+	margin: 20px 0;
+}
+.down{
+	margin:20px auto;
+	width: 200px;
+	border-bottom: 1px dashed #d1d1d1;
+}
+.sort{
+	margin-top: 35px;
+}
+.num{
+	font-size: 14px;
+	float: right;
+	margin-right: 10px;
+}
+.numn{
+	font-size: 12px;
+	float: right;
+	color: #666;
+}
+.list{
+
+	margin: 20px auto;
+	width: 280px;
+}
+.list ul a{
+	display: block;
+	width: 270px;
+	height: 30px;
+	line-height: 30px;
+	margin-bottom: 4px;
+	text-decoration:none;
+	font-size: 14px;
+	border-radius: 15px;
+}
+.list ul a:hover{
+	background-color: #F2F2F2;
+}
+.name{
+	margin-left: -180px;
+	color: #000;
+}
+article{
+	margin-top: 60px;
+    margin-left: 460px;
+    width: 60%;
+    min-height:600px;
+    /*border: 1px solid #000;*/
+    /*height: 500px;*/
+
+}
+#tab-list{
+	width: 100%;
+}
+#ull{
+	height: 50px;
+	border-bottom: 1px solid #e1e1e1; 
+}
+#ull li{
+	float: left;
+	color: #666;
+	width: 130px;
+	line-height: 50px;
+	border-bottom: none;
+	text-align: center;
+}
+#ull li:hover{
+	/*background-color: #e1e1e1;*/
+	cursor:pointer;
+}
+#ull li.active{
+	color: #3385ff;
+	border-bottom: 1px solid #3385ff;
+}
+.search{
+	float: right;
+	height: 27px;
+	width: 200px;
+	margin-top: 15px;
+	line-height: 27px;
+	text-indent: 25px;
+	border: 1px solid #369;
+	border-radius: 5px;
+	background: url(../images/search.png) left no-repeat;
+	background-size: 20px 20px;
+}
+#tab-list section{
+	clear: both;
+/*	border: 1px solid #000;
+/*	border-top: none;*/*/
+
+}
+#tab-list section li{
+	height: 100px;
+	line-height: 100px;
+	text-indent: 10px;
+}
+.article-list{
+/*	border: 1px solid #000;*/
+
+	border-bottom: 1px dashed #999;
+}
+.article-list:hover{
+	/*background-color: #ececee;*/
+	box-shadow: 0px 0px 2px #999;
+}
+.list-title a{
+	/*border: 1px solid #000;*/
+	padding-top: 20px;
+	font-weight: bolder;
+	font-size: 18px;
+	text-indent: 30px;
+	display: block;
+}
+.list-title a:hover{
+	color: #3385ff;
+}
+.list-content p{
+	width: 95%;
+	margin-top: 10px;
+	margin-left: 20px;
+	font-size: 14px;
+	color: #666;
+	line-height: 24px;
+	text-indent: 20px;
+}
+.list-read{
+	margin-bottom: 20px;
+}
+.list-read span{
+	font-size: 12px;
+	color: #999;
+	margin-right: 20px;
+}
+.list-time{
+	margin-left: 510px;
+}

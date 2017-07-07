@@ -1,0 +1,1348 @@
+[ 2017-05-20T09:37:10+08:00 ] 127.0.0.1 /bkweb/index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.021001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_images` [ RunTime:0.202012s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.092006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` ORDER BY SdTime desc LIMIT 0,5   [ RunTime:0.011001s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.076004s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.075005s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.212012s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.021001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_advertisement` [ RunTime:0.152009s ]
+SQL: SELECT * FROM `tb_advertisement`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+NOTIC: [8] Undefined property: Home\TagLib\My::$Array D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `tb_articletype`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011000s ]
+SQL: SELECT `Aid`,`Title`,`ViewNum` FROM `tb_article` ORDER BY ViewNum desc LIMIT 8   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.446025s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.446025s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.013001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.015001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.041003s ]
+INFO: [ app_end ] --END-- [ RunTime:0.041003s ]
+
+[ 2017-05-20T09:39:36+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogspecial/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011000s ]
+SQL: SELECT MAX(ViewNum) AS tp_max FROM `tb_article` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `ViewNum` = 62 ) ORDER BY SdTime desc LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009001s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `recom` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `recom` = 1 ) ORDER BY SdTime desc LIMIT 0,9   [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='8' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='7' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='3' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+NOTIC: [8] Undefined property: Home\TagLib\My::$Array D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `tb_articletype`  [ RunTime:0.001001s ]
+SQL: SELECT * FROM `tb_article` ORDER BY ViewNum desc LIMIT 5   [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.144008s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.144008s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:39:41+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogzj/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `tb_user` ORDER BY Articlecount desc LIMIT 8   [ RunTime:0.002000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Home\Controller\BlogzjController.class.php 第 10 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = null ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_friend` [ RunTime:0.131008s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `Userid` = null )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.022001s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 1 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 2 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 4 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 5 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 6 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 8 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='8' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 3 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 101 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 8 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 4 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 7 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 152 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 181 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 181 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 209 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 237 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 265 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 293 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Undefined index: UserName D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\bece48e72f9adae35db572f56c824117.php 第 321 行.
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = null ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.262015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.263015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-05-20T09:39:47+08:00 ] 127.0.0.1 /bkweb/index.php/home/bloglist/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.536031s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.536031s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-05-20T09:40:10+08:00 ] 127.0.0.1 /bkweb/index.php/home/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `tb_user` SET `LastLoginTime`='2017-05-20 09:40:10',`Lastip`='127.0.0.1' WHERE ( `Uid` = 1 ) [ RunTime:0.001000s ]
+NOTIC: [8] A non well formed numeric value encountered D:\phpStudy\WWW\bkweb\Application\Home\Controller\LoginController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.027001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.027001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:11+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogzj/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_user` ORDER BY Articlecount desc LIMIT 8   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_friend` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `Userid` = 1 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 1 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.009001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 2 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 4 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 5 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 6 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 8 ) GROUP BY Uid ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='8' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.009000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 6 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 5 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 4 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 6 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_friend` WHERE ( `UserName` = 'admin' ) AND ( `friend_friendid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.217013s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.218013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:15+08:00 ] 127.0.0.1 /bkweb/index.php/home/bloglist/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Home\Controller\BloglistController.class.php 第 9 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Uid` = 1 ) ORDER BY SdTime desc  [ RunTime:0.002000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_favoriteblog` [ RunTime:0.338020s ]
+SQL: SELECT * FROM `tb_favoriteblog` WHERE ( `Uid` = 1 )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 14 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 13 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 1 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 2 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 3 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 3 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 4 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 5 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 6 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\6da7dd7829235e331f55e0ed42748c8e.php 第 111 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 7 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 7 ) LIMIT 1   [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.209012s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.209012s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:34+08:00 ] 127.0.0.1 /bkweb/index.php/home/11
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.011000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Home\Controller\BlogcontentController.class.php 第 14 行.
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_favoriteblog` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `tb_favoriteblog` WHERE ( `Uid` = 1 ) AND ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Uid` = 1 ) AND ( `Fid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Uid` = 1 ) AND ( `Fid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Cid` = 5 ) ORDER BY rand() LIMIT 3   [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_review` [ RunTime:0.068004s ]
+SQL: SELECT * FROM `tb_review` WHERE ( `R_articleid` = 11 )  [ RunTime:0.007000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='11' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='11' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='11' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_review` WHERE ( `R_articleid` = 11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011001s ]
+SQL: SELECT SUM(CommentNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Uid` = 1 ) ORDER BY ViewNum desc LIMIT 5   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT SUM(ViewNum) AS tp_sum FROM `tb_article` WHERE ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Uid` = 1 ) ORDER BY CommentNum desc LIMIT 5   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 1 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 2 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 3 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 3 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 4 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 4 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 5 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 5 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 6 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 6 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 7 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 7 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 11 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` WHERE ( `Cid` = 8 ) AND ( `Uid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_articletype` WHERE ( `Cid` = 8 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `tb_article` SET `ViewNum`=ViewNum+1 WHERE ( `Aid` = 11 ) [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant R_pid - assumed 'R_pid' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\8d1faf2ed138450f4e75d825d3928787.php 第 191 行.
+NOTIC: [8] Use of undefined constant R_pid - assumed 'R_pid' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\8d1faf2ed138450f4e75d825d3928787.php 第 196 行.
+NOTIC: [8] Use of undefined constant R_pid - assumed 'R_pid' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\8d1faf2ed138450f4e75d825d3928787.php 第 191 行.
+NOTIC: [8] Use of undefined constant R_pid - assumed 'R_pid' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\8d1faf2ed138450f4e75d825d3928787.php 第 196 行.
+NOTIC: [8] Use of undefined constant R_pid - assumed 'R_pid' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\8d1faf2ed138450f4e75d825d3928787.php 第 191 行.
+NOTIC: [8] Use of undefined constant R_pid - assumed 'R_pid' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Home\8d1faf2ed138450f4e75d825d3928787.php 第 196 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.390022s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.390022s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:54+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogadmin/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:56+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogeditor/useriflist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Home\Controller\BlogeditorController.class.php 第 8 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:57+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogeditor/useriflist
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+NOTIC: [8] Use of undefined constant UserName - assumed 'UserName' D:\phpStudy\WWW\bkweb\Application\Home\Controller\BlogeditorController.class.php 第 8 行.
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' )  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.031002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.031002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:40:59+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogeditor/userinfo
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:41:00+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogeditor/addblogs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `tb_articlefamily` ORDER BY Fid  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `tb_articletype` ORDER BY Cid ASC  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.092006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:41:07+08:00 ] 127.0.0.1 /bkweb/index.php/home/index/index
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_images` [ RunTime:0.009001s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` ORDER BY SdTime desc LIMIT 0,5   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.009001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.010001s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_advertisement` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `tb_advertisement`  [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+NOTIC: [8] Undefined property: Home\TagLib\My::$Array D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_articletype`  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.010000s ]
+SQL: SELECT `Aid`,`Title`,`ViewNum` FROM `tb_article` ORDER BY ViewNum desc LIMIT 8   [ RunTime:0.001001s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.087005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.088005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:41:15+08:00 ] 127.0.0.1 /bkweb/index.php/admin/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+
+[ 2017-05-20T09:41:15+08:00 ] 127.0.0.1 /bkweb/index.php/Admin/login/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.288017s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.288017s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:41:25+08:00 ] 127.0.0.1 /bkweb/index.php/admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-05-20T09:41:32+08:00 ] 127.0.0.1 /bkweb/index.php/admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.024002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+
+[ 2017-05-20T09:41:40+08:00 ] 127.0.0.1 /bkweb/index.php/admin/login/login.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `tb_user` SET `LastLoginTime`='2017-05-20 09:41:40',`Lastip`='127.0.0.1' WHERE ( `Uid` = 1 ) [ RunTime:0.001000s ]
+NOTIC: [8] A non well formed numeric value encountered D:\phpStudy\WWW\bkweb\Application\Admin\Controller\LoginController.class.php 第 29 行.
+
+[ 2017-05-20T09:41:41+08:00 ] 127.0.0.1 /bkweb/index.php/admin/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.039002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.040002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-05-20T09:41:41+08:00 ] 127.0.0.1 /bkweb/index.php/admin/index/deploy.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.055004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.055004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-05-20T09:41:45+08:00 ] 127.0.0.1 /bkweb/index.php/admin/blogsd/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011000s ]
+SQL: SELECT * FROM `tb_article`  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009001s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='3' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='7' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='8' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.050003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.051003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:41:48+08:00 ] 127.0.0.1 /bkweb/index.php/admin/blogsd/readblog/id/1.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `tb_article` WHERE ( `Aid` = 1 )  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.010000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.011001s ]
+SQL: SELECT `UserName` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.077005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.077005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:41:51+08:00 ] 127.0.0.1 /bkweb/index.php/admin/articlefa/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `tb_articlefamily` ORDER BY Fid ASC  [ RunTime:0.001001s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.043002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.044002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-05-20T09:41:58+08:00 ] 127.0.0.1 /bkweb/index.php/admin/articlefr/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.011001s ]
+SQL: SELECT * FROM `tb_articletype` ORDER BY Cid ASC  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.058003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:42:02+08:00 ] 127.0.0.1 /bkweb/index.php/admin/userinfo/useritem.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_user` ORDER BY Uid ASC  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+NOTIC: [8] Use of undefined constant Status - assumed 'Status' D:\phpStudy\WWW\bkweb\Application\Runtime\Cache\Admin\8b1d80aea77010eba7f80bc99ad50ad3.php 第 30 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.052003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.053003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2017-05-20T09:42:07+08:00 ] 127.0.0.1 /bkweb/index.php/admin/review/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.001000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_review` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `tb_review` ORDER BY R_time desc  [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.010000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='11' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.010000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='11' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='11' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `Title` FROM `tb_article` WHERE ( 1=1 AND Aid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.058004s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059004s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003000s ]
+
+[ 2017-05-20T09:42:22+08:00 ] 127.0.0.1 /bkweb/index.php/admin/advert/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.035002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.035002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T09:42:28+08:00 ] 127.0.0.1 /bkweb/index.php/home/index/index.html
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+SQL: SHOW COLUMNS FROM `tb_images` [ RunTime:0.010000s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.011000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT * FROM `tb_article` ORDER BY SdTime desc LIMIT 0,5   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.011001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.009000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.009000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.002001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_advertisement` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `tb_advertisement`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+NOTIC: [8] Undefined property: Home\TagLib\My::$Array D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.009000s ]
+SQL: SELECT * FROM `tb_articletype`  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.010001s ]
+SQL: SELECT `Aid`,`Title`,`ViewNum` FROM `tb_article` ORDER BY ViewNum desc LIMIT 8   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.091005s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.092005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T18:01:47+08:00 ] 127.0.0.1 /bkweb/index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003001s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003001s ]
+SQL: SHOW COLUMNS FROM `tb_images` [ RunTime:0.058004s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 1 ) LIMIT 1   [ RunTime:0.002000s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 2 ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.067004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` ORDER BY SdTime desc LIMIT 0,5   [ RunTime:0.002001s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.033002s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.019001s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.047002s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.050002s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_advertisement` [ RunTime:0.051003s ]
+SQL: SELECT * FROM `tb_advertisement`  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+NOTIC: [8] Undefined property: Home\TagLib\My::$Array D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `tb_articletype`  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.012001s ]
+SQL: SELECT `Aid`,`Title`,`ViewNum` FROM `tb_article` ORDER BY ViewNum desc LIMIT 8   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.164009s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.164009s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.003001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2017-05-20T18:02:01+08:00 ] 127.0.0.1 /bkweb/index.php/home/login/login
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.003000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.013000s ]
+SQL: SELECT * FROM `tb_user` WHERE ( `UserName` = 'admin' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `tb_user` SET `LastLoginTime`='2017-05-20 18:02:01',`Lastip`='127.0.0.1' WHERE ( `Uid` = 1 ) [ RunTime:0.001000s ]
+NOTIC: [8] A non well formed numeric value encountered D:\phpStudy\WWW\bkweb\Application\Home\Controller\LoginController.class.php 第 30 行.
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.047002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.047002s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.003001s ]
+
+[ 2017-05-20T18:02:02+08:00 ] 127.0.0.1 /bkweb/index.php/
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_images` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 1 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_images` WHERE ( `tid` = 2 ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.012001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `tb_article` LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT * FROM `tb_article` ORDER BY SdTime desc LIMIT 0,5   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.012001s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.013001s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `tb_user` [ RunTime:0.013001s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='6' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.000000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='5' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `articleType_name` FROM `tb_articletype` WHERE ( 1=1 AND Cid='4' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `familyname` FROM `tb_articlefamily` WHERE ( 1=1 AND Fid='2' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SELECT `UserName`,`NickName`,`Headimglink` FROM `tb_user` WHERE ( 1=1 AND Uid='1' ) LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_advertisement` [ RunTime:0.013001s ]
+SQL: SELECT * FROM `tb_advertisement`  [ RunTime:0.000000s ]
+INFO: [ view_parse ] --START--
+NOTIC: [8] Array to string conversion D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+NOTIC: [8] Undefined property: Home\TagLib\My::$Array D:\phpStudy\WWW\bkweb\Application\Home\TagLib\My.class.php 第 13 行.
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `tb_articletype`  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_article` [ RunTime:0.012000s ]
+SQL: SELECT `Aid`,`Title`,`ViewNum` FROM `tb_article` ORDER BY ViewNum desc LIMIT 8   [ RunTime:0.001000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.095006s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.095006s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2017-05-20T18:02:10+08:00 ] 127.0.0.1 /bkweb/index.php/home/blogeditor/addblogs
+INFO: [ app_init ] --START--
+INFO: Run Behavior\BuildLiteBehavior [ RunTime:0.000000s ]
+INFO: [ app_init ] --END-- [ RunTime:0.002000s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+SQL: SHOW COLUMNS FROM `tb_articlefamily` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `tb_articlefamily` ORDER BY Fid  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `tb_articletype` [ RunTime:0.012001s ]
+SQL: SELECT * FROM `tb_articletype` ORDER BY Cid ASC  [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.057003s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.059003s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002001s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002001s ]
+

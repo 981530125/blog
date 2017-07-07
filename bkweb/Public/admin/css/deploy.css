@@ -1,0 +1,30 @@
+body{
+	background-color: #fff;
+}
+.bor{
+	width: 100%;
+	margin: 10px auto;
+	border-top: 1px solid #999;
+	/*border: 1px solid #000;
+	border-left: none;*/
+	text-indent: 10px;
+}
+.head{
+	text-align:right;
+	line-height:30px;
+}
+.title{
+	/*margin-top: 15px;*/
+	line-height: 40px;
+	border-left: 2px solid #E10602;
+	/*border-top: 1px solid #000; */
+	border-bottom: 1px solid #999; 
+}
+.item{
+	text-indent: 35px;
+	line-height: 33px;
+	border-bottom: 1px solid #999;
+}
+.content{
+	margin-left: 100px;
+}

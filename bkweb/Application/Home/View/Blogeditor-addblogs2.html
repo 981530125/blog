@@ -1,0 +1,70 @@
+<include file='Common:header'/>
+<link rel="stylesheet" href="__PUBLIC__/css/header.css">
+<link rel="stylesheet" href="__PUBLIC__/css/footer.css">
+<link rel="stylesheet" href="__PUBLIC__/css/edit.css">
+<script type="text/javascript">
+window.UEDITOR_HOME_URL="__PUBLIC__/data/editor/";
+// 
+window.onload=function(){
+	window.UEDITOR_CONFIG.initialFrameWidth=924;
+	window.UEDITOR_CONFIG.initialFrameHeight=500;
+	UE.getEditor("content");
+}
+</script>
+<script src="__PUBLIC__/data/editor/ueditor.config.js"></script>
+<script src="__PUBLIC__/data/editor/ueditor.all.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/data/editor/lang/zh-cn/zh-cn.js"></script>
+<include file='Common:login'/>
+<article>
+<h2>博客发布</h2>
+  <form action="{:U("home/blogeditor/addblogshandle")}" method="post">
+    <table class="table">
+<!--      <tr>
+      <th colspan="2">博客发布</th>
+     </tr> -->
+     <tr>
+       <td class="wid">标&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;题：</td>
+       <td>
+         <input type="text" name="title" class="title" placeholder="添加标题"/>
+       </td>
+      </tr>
+      <tr>
+       <td colspan="2">
+
+         <textarea name="content" id="content" class="content"></textarea>
+        </td>
+       </tr>
+      <tr>
+      <td class="wid">系统分类：</td>
+      <td>
+       <select>
+        <option selected = "selected">请选择</option>
+        <option>移动开发</option>
+        <option>前端开发</option>
+        <option>架构设计</option>
+        <option>编程语言</option>
+        <option>互联网</option>
+        <option>数据库</option>
+        <option>研发管理</option>
+        <option>综合</option>
+       </select>
+      </td>
+     </tr>
+     <tr>
+       <td class="wid">文章类型：</td>
+       <td>
+          <input type="radio" name="type" selected = "selected"/>原创&nbsp;&nbsp;
+          <input type="radio" name="type"/>转载
+       </td>
+      </tr>
+       <tr>
+         <td align="center" colspan="2">
+          <input type="submit" value="发布" class="bn fr"/>
+         </td>
+       </tr>
+      </table> 
+  </form>
+</article>
+<include file='Common:footer'/>
+</body>
+</html>

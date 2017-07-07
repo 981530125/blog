@@ -1,0 +1,157 @@
+<include file='Common:header'/>
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/index.css">
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/bkzl.css">
+<include file='Common:login'/>
+</div><div class="null"></div>
+<include file='Common:nav'/>
+
+<div class="contents clearfix">
+  <div class="leftbox">
+     <div class="top_img">
+      <dl class="blog_tj">
+      <dt><a href="#"><img src="__PUBLIC__/images/8.jpg"></a></dt>
+      <dd><h3 class="track_tj"><a href="{:U('/home/'.$Aid)}">{$Title}</a></h3><div class="sprecomend">特别推荐</div><div class="blog_list_tj">{$Summery}</div></dd>
+      </dl>
+    </div>
+
+    <div class="zl_listitem">
+    <div class="border_box">
+       <h4>优秀专栏推荐</h4>
+     <div class="border_bottom"></div>
+       </div>
+
+       <div class="bk_wamp clearfix">
+           <foreach name="recomblog" item="rb">
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="{:U('/home/'.$rb['Aid'])}" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">{$rb.Title}</p>
+                   <!-- <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">{$rb.ViewNum}</span>
+                     <span class="bk_list_see fr">{$rb.CommentNum}</span>
+                   </div> -->
+                 </div></a>
+         </div>
+          </foreach>
+
+       </div>
+  <!--         <div class="bk_wamp clearfix">
+
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="#" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">架构师修炼之道</p>
+                   <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">12</span>
+                     <span class="bk_list_see fr">23424</span>
+                   </div>
+
+                 </div></a>
+         </div>
+
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="#" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">架构师修炼之道</p>
+                   <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">12</span>
+                     <span class="bk_list_see fr">23424</span>
+                   </div>
+
+                 </div></a>
+         </div>
+
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="#" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">架构师修炼之道</p>
+                   <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">12</span>
+                     <span class="bk_list_see fr">23424</span>
+                   </div>
+
+                 </div></a>
+         </div>
+
+       </div> -->
+<!--          <div class="bk_wamp clearfix">
+
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="#" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">架构师修炼之道</p>
+                   <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">12</span>
+                     <span class="bk_list_see fr">23424</span>
+                   </div>
+
+                 </div></a>
+         </div>
+
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="#" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">架构师修炼之道</p>
+                   <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">12</span>
+                     <span class="bk_list_see fr">23424</span>
+                   </div>
+
+                 </div></a>
+         </div>
+
+         <div class="bk_list">
+             <div class="list_bg"></div>
+               <a href="#" class="bk_list_link">
+                 <div class="bk_link_p">
+                   <p class="bk_list_p">架构师修炼之道</p>
+                   <div class="bk_list_sun hide">
+                     <span class="bk_list_text fl">12</span>
+                     <span class="bk_list_see fr">23424</span>
+                   </div>
+
+                 </div></a>
+         </div>
+
+       </div> -->
+    </div>
+    <div class="page">{$page}</div>
+  </div>
+  <div class="rightbox">
+    <div class="search_b">
+      <input type="text" placeholder="搜索专栏" class="search_text"/>
+      <input type="button" name="search_b_btn" class="search_b_btn " value="搜索"/>
+    </div>
+<!-- articlefaimly -->
+     <include file="Common:family"/>
+<!-- newsend -->
+      <include file ="Common:newsend"/>
+
+
+       <div class="fenr">
+       <div class="modr_title">
+         <div class=border_barr></div>
+         <h3>知识分享</h3>
+       </div>
+        <div class="contents_fenr">
+            <ul class="fenr_list_link">
+            <li><a href="">csdn</a></li>
+            <li><a href="">后盾网</a></li>
+            <li><a href="">慕课网</a></li>
+            <li><a href="">百度</a></li>
+            <li><a href="">新浪</a></li>
+            </ul>
+        </div>
+     </div>
+  </div>
+</div>
+
+<include file='Common:footer'/>
+</body>
+</html>

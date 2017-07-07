@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<link rel="stylesheet" href="__PUBLIC__/Css/public.css" />
+<link rel="stylesheet" href="__PUBLIC__/Css/index.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<head>
+</head>
+<body>
+  <table class="table">
+    <tr>
+      <th>属性ID</th>
+      <th>属性名称</th>
+      <th>操作</th>
+    </tr>
+    <foreach name="articlefa" item="v">
+      <tr>
+        <td>{$v.Fid}</td>
+        <td>{$v.familyname}</td>
+        <td>
+           [<a href="{:U('admin/articlefa/addfamily')}">增加</a>]
+           [<a href="">删除</a>]
+        </td>
+      </tr>
+    </foreach>
+  </table>
+
+</body>
+</html>

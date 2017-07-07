@@ -1,0 +1,13 @@
+   <div class="blog-comment" name="blogcomment" id="blog-comment" style="display:none">
+    <if condition="!isset($_SESSION['UserName'])">
+      <span class="isin">您还没有登录,请[登录]或[注册]!!</span>
+      <else/>
+      <form action="{:U('home/blogcontent/returnreview')}" method="post">
+     <input type="hidden" name="Aid" value="{$aid}">
+     <textarea class="txtarea" name="txtarea" autocomplete="off"></textarea>
+    <!--  <span class="hint" id="hint"></span> -->
+     <input type="hidden" name="R_pid" name="R_pid" value="{$rv.Rid}">
+     <input type="submit" class="btn" name="btn" value="发布评论">
+     </form>
+     </if>
+   </div> 

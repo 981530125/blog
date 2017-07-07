@@ -1,0 +1,42 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<script type="text/javascript" src="__PUBLIC__/Js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Js/index.js"></script>
+<link rel="stylesheet" href="__PUBLIC__/Css/public.css" />
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/pop.css">
+<link rel="stylesheet" href="__PUBLIC__/Css/badmin.css" />
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/reset.css">
+<link rel="Stylesheet" type="text/css" href="__PUBLIC__/css/loginDialog.css" />
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+<base target="iframe"/>
+<head>
+</head>
+<body style="background:#fff;">
+<include file='Common:login'/>
+	<div id="left" style="height:526px;">
+	    <dl>
+			<dt>个人信息管理</dt>
+			<dd><a href="{:U('home/blogeditor/useriflist')}">查看个人资料</a></dd>
+			<dd><a href="{:U('home/blogeditor/userimg')}">头像上传</a></dd>
+			<dd><a href="{:U('home/blogeditor/userinfo')}">修改个人资料</a></dd>
+			<dd><a href="{:U('home/blogeditor/paswd')}">修改密码</a></dd>
+		</dl>
+		<dl>
+			<dt>博客管理</dt>
+			<dd><a href="{:U('home/blogeditor/addblogs')}" target="_self">发表博客</a></dd>
+			<dd><a href="{:U('home/blogeditor/index')}">文章列表</a></dd>
+		</dl>
+		<dl>
+			<dt>评论管理</dt>
+			<dd><a href="{:U('home/blogadmin/reviewblog')}">参与评论</a></dd>
+		</dl>
+		<dl>
+			<dt>好友管理</dt>
+			<dd><a href="{:U('home/blogadmin/friendlist')}">好友列表</a></dd>
+		</dl>
+	</div>
+	<div id="right">
+		<iframe name="iframe" src="{:U('home/blogeditor/useriflist')}"></iframe>
+	</div>
+</body>
+</html>

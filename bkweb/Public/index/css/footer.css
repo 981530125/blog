@@ -1,0 +1,38 @@
+/*底部*/
+.footer{
+	width: 100%;
+	margin-top: 50px;
+	display: block;
+	height: 70px;
+	background-color: #fff;
+	/*border: 1px solid #000;*/
+	overflow: hidden;
+}
+.footer_a{
+	width:41%;
+	overflow: auto;
+	margin: 10px auto;
+	border-bottom: 1px solid #E0E0E0;
+}
+.footer_a dl dd{
+	float: left;
+	margin-left: 15px;
+}
+.sl{
+	margin-left: 15px;
+}
+.footer_a dl dd a{
+	text-align: center;
+	color: #666;
+	font-size: 14px;
+}
+.footer_b{
+	width:46%;
+	overflow: auto;
+	margin: 10px auto;
+}
+.footer_b p{
+	text-indent: 100px;
+   color: #666;
+	font-size: 12px;
+}

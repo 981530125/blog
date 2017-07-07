@@ -1,0 +1,146 @@
+<include file='Common:header'/>
+<link rel="stylesheet" href="__PUBLIC__/css/header.css">
+<link rel="stylesheet" href="__PUBLIC__/css/bloguser.css">
+<link rel="stylesheet" href="__PUBLIC__/css/footer.css">
+<script type="text/javascript" src="__PUBLIC__/js/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/js/review.js"></script>
+<include file='Common:login'/>
+
+
+
+<!-- 主题 -->
+<div id="logo">
+        <div id="logo_text">
+          <h1><a href="index.html">{$NickName}<span class="logo_colour">的博客</span></a></h1>
+          <h2>一切重新开始</h2>
+        </div>
+      </div>
+     <div id="menubar">
+        <ul id="menu">
+          <li class="selected"><a href="{:U('home/blogeditor/addblogs')}" target="_self">写博客</a></li>
+          <li><if condition='$frid'><a href="#">已关注</a><else/><a href="{:U('home/blogzj/absorb',array('id'=>$uid))}">关注</a></if></li>
+        </ul> 
+      </div>
+<aside>
+<div class="grtitle">个人资料</div>
+ <div class="personinf"><img src="__ROOT__/Uploads{$Headimglink}"><div><span><strong>{$NickName}</strong></span></div> </div>
+ <div class="person-inform">
+    <div class="inform-content">
+    <ul>
+    <li>原创：{$county}篇</li>
+    <li>转载：{$countx}篇</li>
+    <li>文章：{$countz}篇</li>
+    <li>评论：{$reviewnum}条</li> 
+    <li>访问：{$readnum}次</li> 
+    </ul>
+</div>
+ </div>
+ <div class="person-item">
+   文章分类
+   <ul class="inform-item">
+      <for start="1" end="9">
+       <?php
+              $uid=I('id','','intval');
+              $sum=D('article')->where(array('Cid'=>$i,'Uid'=>$uid))->count();
+             $type=M('articletype')->where(array('Cid'=>$i))->find();
+             ?>
+          <li><a href="#">
+            <span class="name"><?php echo $type['articleType_name'] ?></span>
+            <em class="num">(<?php
+            echo $sum ?>)</em>
+            </a></li>
+            </for>
+<!--             <li><a href="#">
+            <span class="name">日常记录</span><em class="num">(10)</em>
+            </a></li>
+            <li><a href="#">
+            <span class="name">转载文章</span><em class="num">(10)</em>
+            </a></li>
+            <li><a href="#">
+            <span class="name">前    端</span><em class="num">(10)</em>
+            </a></li>
+            <li><a href="#">
+            <span class="name">工作日志</span><em class="num">(10)</em>
+            </a></li> -->
+          </ul>
+ </div>
+  <div class="person-rank">
+   阅读排行
+   <ul class="inform-rank">
+      <foreach name="readrank" item="rr">
+          <li><a href="{:U('/home/'.$rr['Aid'])}">
+            <span class="viewrank">{$rr.Title}</span><em class="viewnum">({$rr.ViewNum})</em>
+            </a></li>
+       </foreach>
+          </ul>
+ </div>
+<div class="person-rank">
+   评论排行
+   <ul class="inform-rank">
+       <foreach name="commentrank" item="cr">
+          <li><a href="{:U('/home/'.$cr['Aid'])}">
+            <span class="viewrank">{$cr.Title}</span><em class="viewnum">({$cr.CommentNum})</em>
+            </a></li>
+      </foreach>
+          </ul>
+ </div>
+</aside>
+<article>
+<!-- <section>
+   <h2><span class="familycolor">{$familyname}</span><a href="#">{$Title}</a></h2>
+    <div class="list-read"><span class="list-time">{$SdTime}</span><span><a href="#">阅读次数</a>({$ViewNum})</span><span><a href="#">评论</a>({$CommentNum})</span><span><a href="#">{$articleType_name}</a></span></div>
+</section> -->
+<section>
+<!-- 文章列表 -->
+   <div class="blog_list_warp">
+    <foreach name="articlelist" item="al">
+     <dl class="blog_list">
+       <!-- <dt><a href="#"><img src="__ROOT__/Uploads{$al.Headimglink}"></a><a href="#">{$al.NickName}</a></dt> -->
+       <dd><h3 class="track_ad"><a href="{:U('/home/'.$al['Aid'])}">{$al.Title}</a></h3><div class="blog_list_c">{$al.Summery}</div>
+    <div class="blog_list_d clearfix"><div class="blog_list_d_l"><a href="#" class="atn">{$al.articleType_name}</a><a href="#" class="afn">{$al.familyname}</a></div><div class="blog_list_d_r">{$al.SdTime}<span><i></i><em>263</em></span></div></div></dd>
+     </dl>
+     </foreach>
+     </div>
+
+</section>
+<div class="page">{$page}</div>
+ <!--   </form> -->
+</article>
+<include file='Common:footer'/>
+<!-- <script type="text/javascript">
+//    window.onload=function(){
+//     var form=document.getElementById("form");
+//     var formvalue=form.value;
+//     if("")
+// }
+window.onload=function(){
+  var aid=document.getElementById('hideid');
+  var btn=document.getElementById('btn');
+  var hint=document.getElementById('hint');
+  btn.onclick=function(){
+    var Aid=aid.value;
+   var txtarea=document.getElementById('txtarea').value;
+     if(!txtarea){
+      hint.innerHTML="*内容不能为空";
+     }else{
+     var xhr=new XMLHttpRequest();
+   xhr.open('post','blogcontent/ajaxreview',true);
+    xhr.setRequestHeader("Content-type","application/x-www-form-urlencoded");
+    xhr.send('Aid='+Aid+'&&txtarea='+txtarea);
+    xhr.onreadystatechange=function(){
+      if(xhr.readyState==4 && xhr.status==200){
+        if(xhr.responseText=="success"){
+          hint.innerHTML="上传成功";
+        }
+        if(xhr.responseText=="error"){
+          hint.innerHTML="上传失败";
+        }
+      }
+    }
+     }
+
+  }
+}
+</script> -->
+</body>
+</html>

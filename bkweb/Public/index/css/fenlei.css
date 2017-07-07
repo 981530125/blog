@@ -1,0 +1,35 @@
+.header_bar{position: fixed;}
+/*内容模块*/
+.contents{width: 86%;margin: 0 auto;margin-top: 30px;}
+/*左侧内容*/
+.leftbox{width: 840px;float: left;}
+.box_title{background-color: #fff;line-height: 50px;text-indent: 20px;}
+.box_title a{font-size: 12px;margin-right: 20px;text-decoration: none;}
+.blog_list_warp{margin-top:2px;overflow: auto;}
+.blog_list{height: 220px;background-color: #fff;border-bottom: 1px solid #e7ecef;}
+.headicon {
+    width: 75px;
+    height: 75px;
+}
+.blog_list dt{width: 15%;float: left;height: 150px;margin-top: 35px;text-align: center;border-right: 1px solid #e7ecef;}
+.blog_list dt a{margin: 0 auto;text-decoration: none;color: #000;display: block;}
+.blog_list dd{width: 80%;float: right;height: 150px;margin-top: 35px;padding-right: 20px;}
+.blog_list_c{ width:500px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;margin-top: 15px;}
+.blog_list_d{margin-top: 50px;}
+.blog_list_d_l{float: left;}
+.blog_list_d_r{float: right;}
+.blog_list_d_r span{margin:0 10px;}
+/*右侧内容*/
+.rightbox{width: 300px;float: right;overflow: auto;}
+.mod_title{height: 50px;line-height: 50px;text-indent: 20px;font-size: 14px;border-bottom: 1px solid #e7ecef;}
+.contents_fenl{width:84%;margin: 0 auto;overflow: auto;background-color: #fff;}
+.fenl{background-color: #fff;margin-bottom: 10px; }
+.fenl_list li{overflow: hidden;height: 70px;line-height: 70px;width: 45%;float: left;border-bottom: 2px dotted #e7ecef;}
+.fenl_list li a{ }
+.modr_title{height: 50px;line-height: 50px;text-indent: 20px;font-size: 14px;border-bottom: 1px solid #e7ecef;}
+.contents_fenr{width:84%;margin: 0 auto;overflow: auto;background-color: #fff;}
+.fenr{background-color: #fff;margin-bottom: 10px; }
+.fenr_list li{overflow: hidden;height: 60px;line-height: 60px;border-bottom: 2px dotted #e7ecef;}
+.fenr_list li a{display:block; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.fenr_list_link li{margin-left: 10px;height: 60px;line-height: 60px;border-bottom: 2px dotted #e7ecef;float: left;list-style: none;}
+.fenr_list_link li a{display:block; width:100%; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }

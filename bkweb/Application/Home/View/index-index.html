@@ -1,0 +1,71 @@
+<include file='Common:header'/>
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/index.css">
+<!-- <link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/page.css"> -->
+<include file='Common:login'/>
+<div class="null"></div>
+<include file='Common:nav'/>
+<!-- content -->
+<div class="contents clearfix">
+  <div class="leftbox">
+    <div class="img">
+      <a href="{:U('/home/'.$leftimg['blogid'])}" target="_blank"><img class="imga fl" src="__ROOT__/Uploads{$leftimg['imageslink']}"></a><a href="{:U('/home/'.$rightimg['blogid'])}" target="_blank"><img class="imgb fr" src="__ROOT__/Uploads{$rightimg['imageslink']}"></a>
+    </div>
+    <div class="box_title">
+    <foreach name="advert" item="adt">
+    <a href="{:U('/home/'.$adt['Link'])}">&nbsp;&nbsp;&gt;&gt;{$adt.Ad}</a>
+    </foreach>
+    <!-- <a href="#">&gt;&gt;IBM Bluemix名师大讲堂火热报名ing（北京）</a>
+    <a href="#">&gt;&gt;【攒课】我的学习我做主</a> -->
+    </div>
+   <div class="blog_list_warp">
+   <foreach name="article" item="va">
+    <dl class="blog_list">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$va['Uid']))}"><img class="headicon" src="__ROOT__/Uploads{$va.Headimglink}"></a>
+       <a href="#">{$va.UserName}</a></dt>
+       <dd><h3 class="track_ad"><a href="{:U('/home/'.$va['Aid'])}">{$va.Title}</a></h3><div class="blog_list_c">{$va.Summery}...</div>
+    <div class="blog_list_d clearfix"><div class="blog_list_d_l"><a href="{:U('/home/c_'.$va['Cid'])}">{$va.articleType_name}</a></div><div class="blog_list_d_r">{$va.SdTime}<span><i class="see"><img src="__PUBLIC__/images/see.png"></i><em>{$va.ViewNum}</em></span></div></div></dd>
+     </dl> 
+     </foreach>
+   </div>
+   <div class="page">{$page}</div>
+  </div>
+  <div class="rightbox">
+<!-- articlefaimly -->
+    <include file="Common:family"/>
+    
+   <include file="Common:hotrank"/>
+       <div class="fenr">
+       <div class="modr_title">
+         <div class=border_barr></div>
+         <h3>友情链接</h3>
+       </div>
+        <div class="contents_fenr">
+            <ul class="fenr_list_link">
+            <li><a href="">csdn</a></li>
+            <li><a href="">后盾网</a></li>
+            <li><a href="">慕课网</a></li>
+            <li><a href="">百度</a></li>
+            <li><a href="">新浪</a></li>
+            </ul>
+        </div>
+     </div>
+     <div class="fenr">
+       <div class="modr_title">
+         <div class=border_barr></div>
+         <h3>联系我们</h3>
+       </div>
+        <div class="contents_fenr">
+            <ul class="contents_fenr_lx">
+            <li class="style1"><a href="">官方微博：xxxx</a></li>
+            <li class="style1"><a href="">官方微信公众号：xxxx</a></li>
+            <li><a href="">官方博客QQ群号：xxxxxxxx</a></li>
+            <li><a href=""></a></li>
+            </ul>
+        </div>
+     </div>
+  </div>
+</div>
+
+<include file='Common:footer'/>
+</body>
+</html>

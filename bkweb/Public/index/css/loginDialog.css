@@ -1,0 +1,95 @@
+﻿@charset "utf-8";
+.mask{
+	margin:0;
+	padding:0;
+	border:none;
+	width:100%;
+	height:100%;
+	background:#333;
+	opacity:0.6;
+	filter:alpha(opacity=60);
+	z-index:9999;
+	position:fixed;
+	top:0;left:0;
+	display:none;
+}
+#LoginBox{
+/*	position:absolute;
+    left:460px;
+    top:150px;*/
+    position: fixed;
+    top: 150px;
+    left: 460px;
+    background:#fff;
+    width:426px;
+    height:282px;
+    box-shadow: 0px 0px 4px #999;
+    border-radius:7px;
+    z-index:10000;
+    display:none;
+}
+#login_dl{
+    color: #fff;
+    font-size: 12px;
+}
+.row1{
+	background:#f7f7f7;
+    padding:0px 20px;
+    line-height:50px;
+    height:50px;
+    font-weight:bold;
+    color:#666;
+    font-size:20px;}
+.row{
+    height:77px;
+	line-height:77px;
+    padding:0px 15px;
+    font-family:华文楷体;
+    font-size:x-large;
+}
+.close_btn{
+	font-family:arial;
+	font-size:30px;
+	font-weight:700;
+	color:#999;
+	text-decoration:none;
+	float:right;
+	padding-right:4px;
+}
+.inputBox{
+	border:1px solid #c3c3c3;
+    padding:1px 3px 6px 3px;
+    border-radius:5px;
+    margin-left:5px;
+}
+#txtName{
+	height:27px;
+    width:210px;
+    border:none;
+}
+#txtPwd{
+	height:27px;
+    width:210px;
+    border:none;
+}
+#loginbtn{
+	color:#fff;
+    background:#4490f7;
+    text-decoration:none;
+    padding:10px 95px;
+    margin-left:80px;
+    margin-top:10px;
+    border-radius:5px;
+    opacity:0.8;
+    filter:alpha(opacity=80);
+}
+/*#login_dl{position:fixed;left:390px;top:30px;color:White;background:#4490f7;text-decoration:none;padding:10px 95px;margin-left:87px;margin-top:40px;border-radius:5px;opacity:0.6;filter:alpha(opacity=60);}*/
+.warning{
+	float:right;
+    color:#FF0000;
+    margin-right: 15px;
+    text-decoration:none;
+    font-size:12px;
+    font-weight:bold;
+    display:none;
+}

@@ -1,0 +1,287 @@
+<include file='Common:header'/>
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/bkzj.css">
+<script type="text/javascript" src="__PUBLIC__/js/style.js"></script>
+<include file='Common:login'/>
+<div class="null"></div>
+<include file='Common:nav'/>
+
+<article class="content clearfix">
+  <div class="content_list">
+    <h4 class="content_h4">推荐专家</h4>
+    <div class="content_rank">
+      <foreach name="user" item="zj">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$zj['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$zj.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$zj.UserName}</a>
+         <div class="content_adderss">
+           <em>{$zj.address}</em>
+           <b>|</b>
+           <span>{$zj.occupation}</span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b>{$zj.Articlecount}</b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$zj['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+<!-- 是否关注 -->
+        <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$zj['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$zj['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+        </foreach>
+  <!-- 布局结构类型 -->
+<!--          <dl class="content_dl">
+       <dt><a href="#">
+          <img class="content_userimg" src="__PUBLIC__/images/user.jpg"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">黄蓉</a>
+         <div class="content_adderss">
+           <em>北京</em>
+           <b>|</b>
+           <span>安卓高级工程师</span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b>78</b><span>文章数</span></div>
+           <div class="content_coutl fr"><b>78</b><span>阅读量</span></div>
+         </div>
+         <div class="content_btn"><a href="#"><input class="content_btnl" type="button" value="关注" onclick="#"></a></div>
+       </dd>
+      </dl> -->
+    </div>
+  </div>
+<!-- 所有专家 -->
+  <div class="content_classify" id="tab-list">
+    <ul id="ull">
+    <li class="active">全部专家</li><li >移动开发</li><li>Web前端</li><li>编辑语言</li><li>互联网</li><li>数据库</li><li>综合</li>
+    </ul>
+<!-- 全部专家 -->
+    <section class="content_classify_tabliast">
+      <foreach name="user" item="zj">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$zj['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$zj.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$zj.UserName}</a>
+         <div class="content_adderss">
+           <em>{$zj.address}</em>
+           <b>|</b>
+           <span>{$zj.occupation}</span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b>{$zj.Articlecount}</b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$zj['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+<!-- 是否关注 -->
+        <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$zj['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$zj['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+        </foreach>
+      </section>
+
+
+<!-- 移动开发 -->
+    <section class="content_classify_tabliast hide">
+       <foreach name="yd" item="y">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$y['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$y.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$y.UserName}</a>
+         <div class="content_adderss">
+         <?php $use=M('user')->where(array('Uid'=>$y['Uid']))->find();?>
+           <em><?php echo $use['address'];?></em>
+           <b>|</b>
+           <span><?php echo $use['occupation'];?></span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b><?php echo $use['Articlecount'];?></b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$y['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+          <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$y['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$y['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+      </foreach>
+      </section>
+<!-- Web前端 -->
+      <section class="content_classify_tabliast hide">
+
+      <foreach name="qd" item="q">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$q['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$q.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$q.UserName}</a>
+         <div class="content_adderss">
+         <?php $use=M('user')->where(array('Uid'=>$q['Uid']))->find();?>
+           <em><?php echo $use['address'];?></em>
+           <b>|</b>
+           <span><?php echo $use['occupation'];?></span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b><?php echo $use['Articlecount'];?></b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$q['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+          <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$q['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$q['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+      </foreach>
+      </section>
+<!-- 编辑语言 -->
+          <section class="content_classify_tabliast hide">
+
+      <foreach name="bj" item="j">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$j['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$j.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$j.UserName}</a>
+         <div class="content_adderss">
+         <?php $use=M('user')->where(array('Uid'=>$j['Uid']))->find();?>
+           <em><?php echo $use['address'];?></em>
+           <b>|</b>
+           <span><?php echo $use['occupation'];?></span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b><?php echo $use['Articlecount'];?></b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$j['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+          <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$j['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$j['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+      </foreach>
+      </section>
+<!-- 互联网 -->
+          <section class="content_classify_tabliast hide">
+
+      <foreach name="hlw" item="h">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$h['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$h.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$h.UserName}</a>
+         <div class="content_adderss">
+         <?php $use=M('user')->where(array('Uid'=>$h['Uid']))->find();?>
+           <em><?php echo $use['address'];?></em>
+           <b>|</b>
+           <span><?php echo $use['occupation'];?></span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b><?php echo $use['Articlecount'];?></b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$h['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+          <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$h['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$h['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+      </foreach>
+      </section>
+<!-- 数据库 -->
+          <section class="content_classify_tabliast hide">
+
+      <foreach name="sjk" item="k">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$k['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$k.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$k.UserName}</a>
+         <div class="content_adderss">
+         <?php $use=M('user')->where(array('Uid'=>$k['Uid']))->find();?>
+           <em><?php echo $use['address'];?></em>
+           <b>|</b>
+           <span><?php echo $use['occupation'];?></span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b><?php echo $use['Articlecount'];?></b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$k['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+          <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$k['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$k['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+      </foreach>
+      </section>
+      <!-- 综合 -->
+          <section class="content_classify_tabliast hide">
+
+      <foreach name="zoh" item="z">
+      <dl class="content_dl">
+       <dt><a href="{:U('/home/bloguser/index',array('id'=>$z['Uid']))}">
+          <img class="content_userimg" src="__ROOT__/Uploads{$z.Headimglink}"></a>
+       </dt><div class="hr1"></div>
+       <dd>
+         <a class="content_name" href="#">{$z.UserName}</a>
+         <div class="content_adderss">
+         <?php $use=M('user')->where(array('Uid'=>$z['Uid']))->find();?>
+           <em><?php echo $use['address'];?></em>
+           <b>|</b>
+           <span><?php echo $use['occupation'];?></span></div>
+         <div class="content_cout">
+           <div class="content_coutl fl"><b><?php echo $use['Articlecount'];?></b><span>文章数</span></div>
+           <div class="content_coutl fr"><b><?php $sumScore = M('article')->where(array('Uid'=>$z['Uid']))->sum('ViewNum');echo $sumScore; ?></b><span>阅读量</span></div>
+         </div>
+          <div class="content_btn">
+         <?php
+           $fexist=M('friend')->where(array('UserName'=>$_SESSION['UserName'],'friend_friendid'=>$z['Uid']))->find();
+           if( $fexist){  ?>
+        <input class="content_btnl" type="button" value="已关注" onclick="#">
+        <?php }else{ ?>
+        <a href="{:U('home/blogzj/absorb',array('id'=>$z['Uid']))}"><input class="content_btnl" type="button" value="关注" onclick="#"></a><?php } ?>
+        </div>
+       </dd>
+      </dl>
+      </foreach>
+      </section>
+  </div>
+
+</article>
+
+<include file='Common:footer'/>
+</body>
+</html>

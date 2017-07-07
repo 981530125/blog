@@ -1,0 +1,60 @@
+<include file='Common:header'/>
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/index.css">
+<link type="text/css"  rel="stylesheet"  href="__PUBLIC__/css/ph.css">
+<include file='Common:login'/>
+<div class="null"></div>
+<include file='Common:nav'/>
+
+<div class="ranking clearfix">
+<div class="ranking_week">
+   <h4>文章周排行</h4>
+   <ul>
+     <foreach name="articlerank" item="ar">
+     <li class="list_name"><span>{$numa++}</span><label><a href="{:U('/home/'.$ar['Aid'])}">{$ar.Title}</a></label></li>
+     </foreach>
+   </ul>
+</div>
+<div class="ranking_week">
+   <h4>博客周排行</h4>
+   <ul>
+     <foreach name="articlecount" item="ac">
+     <li class="list_name"><span>{$numb++}</span><label><a href="{:U('/home/bloguser/index',array('id'=>$ac['Uid']))}">{$ac.NickName}</a></label></li>
+     </foreach>
+   </ul>
+</div>
+<div class="ranking_week">
+   <h4>评论周排行</h4>
+   <ul>
+     <foreach name="articlerecom" item="am">
+     <li class="list_name"><span>{$numc++}</span><label><a href="{:U('/home/'.$am['Aid'])}">{$am.Title}</a></label></li></label>
+     </foreach>
+   </ul>
+</div>
+<div class="ranking_week">
+   <h4>受欢迎的博客</h4>
+   <ul>
+     <foreach name="articleview" item="av">
+     <li class="list_name"><span>{$numd++}</span><label><a href="{:U('/home/'.$av['Aid'])}">{$av.Title}</a></label></li></label>
+     </foreach>
+   </ul>
+</div>
+<div class="ranking_week">
+   <h4>原创博客周排行</h4>
+   <ul>
+     <foreach name="articlefa" item="af">
+     <li class="list_name"><span>{$nume++}</span><label><a href="{:U('/home/'.$af['Aid'])}">{$af.Title}</a></label></li>
+     </foreach>
+   </ul>
+</div>
+<div class="ranking_week">
+   <h4>转载博客周排行</h4>
+   <ul>
+     <foreach name="articlefb" item="bf">
+     <li class="list_name"><span>{$numf++}</span><label><a href="{:U('/home/'.$bf['Aid'])}">{$bf.Title}</a></label></li>
+     </foreach>
+   </ul>
+</div>
+</div>
+<include file='Common:footer'/>
+</body>
+</html>
